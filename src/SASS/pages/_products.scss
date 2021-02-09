@@ -1,0 +1,149 @@
+//Products Page
+
+#loading-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#loading-spinner {
+  width: 5rem;
+  padding: $main-spacing * 2;
+}
+
+.products-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: $main-spacing;
+  padding-top: $main-spacing * 2;
+}
+
+.products-dropdown {
+  display: flex;
+  justify-content: flex-end;
+}
+
+#product-sorter {
+  font-family: 'Raleway';
+  margin-top: 3rem;
+} 
+
+.all-grid {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.products-grid {
+  display: grid;
+  margin: ($main-spacing * 2) 0;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  gap: $main-spacing;
+}
+
+.grid-product {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.grid-product img {
+  width: 15rem;
+  height: 15rem;
+  padding-bottom: $main-spacing / 2;
+}
+
+.grid-product p {
+  padding: ($main-spacing / 2) 0;
+}
+
+.grid-product-name {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+// Tablet View
+
+@media screen and (min-width: 540px) {
+
+  .products-grid {
+    display: grid;
+    margin: ($main-spacing * 2) 0;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    gap: $main-spacing * 2;
+    align-items: center;
+  }
+
+  .grid-product img {
+    width: 15rem;
+    height: 15rem;
+    padding-bottom: $main-spacing / 2;
+  }
+}
+
+@media screen and (min-width: 600px) {
+
+  .grid-product img {
+    width: 17rem;
+    height: 17rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+
+  .grid-product img {
+    width: 20rem;
+    height: 20rem;
+    padding-bottom: $main-spacing / 2;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+
+  .products-grid {
+    display: grid;
+    margin: ($main-spacing * 2) 0;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    gap: $main-spacing * 2;
+    align-items: center;
+  }
+
+  .grid-product img {
+    width: 20rem;
+    height: 20rem;
+    padding-bottom: $main-spacing / 2;
+  }
+}
+
+// Desktop View
+
+@media screen and (min-width: 1240px) {
+
+  .products-page {
+    padding: $main-spacing * 2;
+  }
+
+  .products-grid {
+    display: grid;
+    margin: ($main-spacing * 2) 0;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    gap: $main-spacing * 3;
+    align-items: center;
+  }
+
+  .grid-product img {
+    width: 25rem;
+    height: 25rem;
+    padding-bottom: $main-spacing / 2;
+  }
+  
+}

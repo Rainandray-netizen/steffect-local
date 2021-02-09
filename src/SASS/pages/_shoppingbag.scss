@@ -1,0 +1,66 @@
+//Shopping Bag
+
+.shopping-bag-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: $main-spacing;
+  padding-top: $main-spacing * 2;
+}
+
+.shopping-bag-page h1 {
+  padding-bottom: $main-spacing;
+}
+
+.bag-contents {
+  padding: $main-spacing;
+  text-align: center;
+  margin: ($main-spacing * 2) 0;
+}
+
+.bag-contents th {
+  font-weight: bold;
+  padding: $main-spacing /2;
+}
+
+.bag-contents td {
+  padding: $main-spacing /2;
+}
+
+.bag-contents input {
+  width: 3rem;
+  padding: $main-spacing;
+}
+
+.bin {
+  fill: black;
+}
+
+.bag-info {
+  text-align: center;
+}
+
+.bag-info img {
+  width: 10rem;
+  height: 10rem;
+}
+
+.bag-info p {
+  padding: ($main-spacing / 2) 0;
+}
+
+.total-price {
+  font-weight: bold;
+  border-top: 2px solid $main-color;
+}
+
+@media screen and (min-width: 540px) {
+
+  .bag-contents th, td {
+    padding: $main-spacing * 2;
+  }
+}
+
+@media screen and (min-width: 768px) {
+
+}

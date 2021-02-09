@@ -1,0 +1,93 @@
+//Navigation
+
+nav {
+  background-color: $main-color;
+}
+
+#nav-mobile {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: $main-spacing;
+}
+
+.nav-buttons {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+
+svg {
+  transition: $main-transition;
+}
+
+svg:hover {
+  fill: $accent-color;
+}
+
+.search-bag svg {
+  padding-left: $main-spacing /2;
+}
+
+#logo {
+  position: absolute;
+}
+
+#nav-desktop {
+  display: none;
+}
+
+// Tablet & Desktop View
+
+@media screen and (min-width: 600px) {
+  #nav-desktop {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: $main-spacing ($main-spacing * 2);
+    padding-top: $main-spacing * 2;
+  }
+
+  #nav-mobile {
+    display: none;
+  }
+
+  .search-bag svg {
+    padding-left: $main-spacing;
+  }
+
+  .nav-buttons {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+  }
+
+  .home-navlinks {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-transform: uppercase;
+    text-align: center;
+    padding-top: $main-spacing;
+  }
+  
+  .home-navlinks li {
+    padding: $main-spacing;
+  }
+  
+  .home-navlinks a {
+    text-decoration: none;
+    color: white;
+    transition: $main-transition;
+  }
+  
+  .home-navlinks a:hover {
+    color: $accent-color;
+  }
+}

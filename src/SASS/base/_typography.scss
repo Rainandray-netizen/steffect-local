@@ -1,0 +1,53 @@
+//Typography
+
+@font-face {
+  font-family: 'Raleway';
+  src: url('../assets/fonts/Raleway-Regular.eot');
+  src: url('../assets/fonts/Raleway-Regular.eot?#iefix') format('embedded-opentype'),
+      url('../assets/fonts/Raleway-Regular.woff2') format('woff2'),
+      url('../assets/fonts/Raleway-Regular.woff') format('woff'),
+      url('../assets/fonts/Raleway-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'BodoniFLF';
+  src: url('../assets/fonts/BodoniFLF-Bold.eot');
+  src: url('../assets/fonts/BodoniFLF-Bold.eot?#iefix') format('embedded-opentype'),
+      url('../assets/fonts/BodoniFLF-Bold.woff2') format('woff2'),
+      url('../assets/fonts/BodoniFLF-Bold.woff') format('woff'),
+      url('../assets/fonts/BodoniFLF-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+body {
+  font-family: 'Raleway';
+}
+
+h1 {
+  font-size: 4rem;
+  font-weight: bold;
+  font-family: 'BodoniFLF';
+  text-transform: uppercase;
+}
+
+h2 {
+  font-size: 3.2rem;
+  font-weight: bold;
+  font-family: 'BodoniFLF';
+  text-transform: uppercase;
+}
+
+h3 {
+  font-size: 2.4rem;
+  font-weight: bold;
+  font-family: 'BodoniFLF';
+  text-transform: uppercase;
+}
+
+h4, p, li, span, label, table {
+  font-size: 1.6rem;
+  font-family: 'Raleway';
+}

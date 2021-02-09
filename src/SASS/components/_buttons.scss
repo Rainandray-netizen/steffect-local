@@ -1,0 +1,43 @@
+//Buttons
+
+//Homepage
+
+.hero-button {
+  text-transform: uppercase;
+  color: white;
+  font-weight: bold;
+  background-color: transparent;
+  border: 0.4rem solid white;
+  padding: ($main-spacing / 2) $main-spacing;
+  margin: $main-spacing;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.hero-button:hover {
+  color: $accent-color;
+  border: 0.4rem solid $accent-color;
+}
+
+svg {
+  fill: white;
+  cursor: pointer;
+}
+
+//Products Page
+
+.add-to-bag {
+  text-transform: uppercase;
+  color: white;
+  font-weight: bold;
+  background-color: $main-color;
+  border: none;
+  padding: ($main-spacing / 2) $main-spacing;
+  margin: $main-spacing;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.add-to-bag:hover {
+  background-color: $accent-color;
+}

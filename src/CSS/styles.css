@@ -1,0 +1,815 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+@font-face {
+  font-family: "Raleway";
+  src: url("../assets/fonts/Raleway-Regular.eot");
+  src: url("../assets/fonts/Raleway-Regular.eot?#iefix") format("embedded-opentype"), url("../assets/fonts/Raleway-Regular.woff2") format("woff2"), url("../assets/fonts/Raleway-Regular.woff") format("woff"), url("../assets/fonts/Raleway-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "BodoniFLF";
+  src: url("../assets/fonts/BodoniFLF-Bold.eot");
+  src: url("../assets/fonts/BodoniFLF-Bold.eot?#iefix") format("embedded-opentype"), url("../assets/fonts/BodoniFLF-Bold.woff2") format("woff2"), url("../assets/fonts/BodoniFLF-Bold.woff") format("woff"), url("../assets/fonts/BodoniFLF-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+body {
+  font-family: "Raleway";
+}
+
+h1 {
+  font-size: 4rem;
+  font-weight: bold;
+  font-family: "BodoniFLF";
+  text-transform: uppercase;
+}
+
+h2 {
+  font-size: 3.2rem;
+  font-weight: bold;
+  font-family: "BodoniFLF";
+  text-transform: uppercase;
+}
+
+h3 {
+  font-size: 2.4rem;
+  font-weight: bold;
+  font-family: "BodoniFLF";
+  text-transform: uppercase;
+}
+
+h4, p, li, span, label, table {
+  font-size: 1.6rem;
+  font-family: "Raleway";
+}
+
+nav {
+  background-color: #613B1A;
+}
+
+#nav-mobile {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+}
+
+.nav-buttons {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+
+svg {
+  transition: 0.3s ease;
+}
+
+svg:hover {
+  fill: goldenrod;
+}
+
+.search-bag svg {
+  padding-left: 0.75rem;
+}
+
+#logo {
+  position: absolute;
+}
+
+#nav-desktop {
+  display: none;
+}
+
+@media screen and (min-width: 600px) {
+  #nav-desktop {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 3rem;
+    padding-top: 3rem;
+  }
+
+  #nav-mobile {
+    display: none;
+  }
+
+  .search-bag svg {
+    padding-left: 1.5rem;
+  }
+
+  .nav-buttons {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+  }
+
+  .home-navlinks {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-transform: uppercase;
+    text-align: center;
+    padding-top: 1.5rem;
+  }
+
+  .home-navlinks li {
+    padding: 1.5rem;
+  }
+
+  .home-navlinks a {
+    text-decoration: none;
+    color: white;
+    transition: 0.3s ease;
+  }
+
+  .home-navlinks a:hover {
+    color: goldenrod;
+  }
+}
+footer {
+  background-color: #613B1A;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+footer img {
+  padding: 1.5rem;
+  padding-bottom: 3rem;
+}
+
+footer p {
+  color: white;
+  cursor: default;
+}
+
+.contact-icons svg {
+  padding: 1.5rem;
+}
+
+.contact-icons a:hover {
+  fill: goldenrod;
+}
+
+.footer-links {
+  text-transform: uppercase;
+  text-align: center;
+  padding: 1.5rem;
+}
+
+.footer-links li {
+  padding: 1.5rem 0;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: white;
+  transition: 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: goldenrod;
+}
+
+@media screen and (min-width: 600px) {
+  .footer-links {
+    display: flex;
+    flex-direction: row;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 1.5rem;
+    margin: 1.5rem;
+  }
+
+  .footer-links li {
+    padding: 0 1.5rem;
+  }
+
+  .footer-links a {
+    text-decoration: none;
+    color: white;
+    transition: 0.3s ease;
+  }
+
+  .footer-links a:hover {
+    color: goldenrod;
+  }
+
+  footer p {
+    margin-top: 1.5rem;
+  }
+}
+.hero-button {
+  text-transform: uppercase;
+  color: white;
+  font-weight: bold;
+  background-color: transparent;
+  border: 0.4rem solid white;
+  padding: 0.75rem 1.5rem;
+  margin: 1.5rem;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.hero-button:hover {
+  color: goldenrod;
+  border: 0.4rem solid goldenrod;
+}
+
+svg {
+  fill: white;
+  cursor: pointer;
+}
+
+.add-to-bag {
+  text-transform: uppercase;
+  color: white;
+  font-weight: bold;
+  background-color: #613B1A;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  margin: 1.5rem;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.add-to-bag:hover {
+  background-color: goldenrod;
+}
+
+main {
+  min-height: 80vh;
+}
+
+.hero-image {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../assets/images/products/6.jpeg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  height: 50vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+@media screen and (min-width: 1024px) {
+  .hero-image {
+    height: 70vh;
+  }
+}
+@media screen and (min-width: 1240px) {
+  .hero-image {
+    height: 80vh;
+  }
+}
+.featured-products {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.featured-products h1 {
+  font-size: 32px;
+  text-align: center;
+  padding: 3rem 0;
+}
+
+#hambody {
+  background-color: #613B1A;
+  padding: 1.5rem;
+}
+
+.hamburger-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hamburger-menu img {
+  padding: 1.5rem;
+  padding-bottom: 3rem;
+}
+
+#hambody a {
+  color: white;
+}
+
+#hambody a:hover {
+  color: goldenrod;
+}
+
+footer p {
+  color: white;
+  cursor: default;
+}
+
+.hamburger-links {
+  text-transform: uppercase;
+  text-align: center;
+  padding: 1.5rem;
+}
+
+.hamburger-links li {
+  padding: 1.5rem 0;
+}
+
+.hamburger-links a {
+  text-decoration: none;
+  color: white;
+  transition: 0.3s ease;
+}
+
+.hamburger-links a:hover {
+  color: goldenrod;
+}
+
+.about-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.5rem;
+  padding-top: 3rem;
+}
+
+.about-page h1 {
+  padding-bottom: 1.5rem;
+}
+
+#aboutInfo div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.about-page p {
+  margin: 1.5rem;
+}
+
+.about-img {
+  width: 30rem;
+  margin: 1.5rem;
+}
+
+@media screen and (min-width: 1240px) {
+  .about-page p {
+    width: 75vw;
+  }
+}
+.contact-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.5rem;
+  padding-top: 3rem;
+}
+
+.contact-page h1 {
+  padding-bottom: 1.5rem;
+}
+
+.contact-page p {
+  margin: 1.5rem;
+}
+
+.contact-form span {
+  color: red;
+  font-weight: bold;
+}
+
+.name-form, .email-form, .subject-form, .message-form {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+}
+
+.message-form {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.contact-form label {
+  margin: 1.5rem 0;
+}
+
+.contact-form input, textarea {
+  padding: 1rem;
+}
+
+#loading-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#loading-spinner {
+  width: 5rem;
+  padding: 3rem;
+}
+
+.products-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.5rem;
+  padding-top: 3rem;
+}
+
+.products-dropdown {
+  display: flex;
+  justify-content: flex-end;
+}
+
+#product-sorter {
+  font-family: "Raleway";
+  margin-top: 3rem;
+}
+
+.all-grid {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.products-grid {
+  display: grid;
+  margin: 3rem 0;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  gap: 1.5rem;
+}
+
+.grid-product {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.grid-product img {
+  width: 15rem;
+  height: 15rem;
+  padding-bottom: 0.75rem;
+}
+
+.grid-product p {
+  padding: 0.75rem 0;
+}
+
+.grid-product-name {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+@media screen and (min-width: 540px) {
+  .products-grid {
+    display: grid;
+    margin: 3rem 0;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    gap: 3rem;
+    align-items: center;
+  }
+
+  .grid-product img {
+    width: 15rem;
+    height: 15rem;
+    padding-bottom: 0.75rem;
+  }
+}
+@media screen and (min-width: 600px) {
+  .grid-product img {
+    width: 17rem;
+    height: 17rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .grid-product img {
+    width: 20rem;
+    height: 20rem;
+    padding-bottom: 0.75rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .products-grid {
+    display: grid;
+    margin: 3rem 0;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    gap: 3rem;
+    align-items: center;
+  }
+
+  .grid-product img {
+    width: 20rem;
+    height: 20rem;
+    padding-bottom: 0.75rem;
+  }
+}
+@media screen and (min-width: 1240px) {
+  .products-page {
+    padding: 3rem;
+  }
+
+  .products-grid {
+    display: grid;
+    margin: 3rem 0;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    gap: 4.5rem;
+    align-items: center;
+  }
+
+  .grid-product img {
+    width: 25rem;
+    height: 25rem;
+    padding-bottom: 0.75rem;
+  }
+}
+.single-product-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.5rem;
+  padding-top: 3rem;
+}
+
+.single-product {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.single-product img {
+  width: 30rem;
+  height: 30rem;
+  padding-bottom: 1.5rem;
+}
+
+.single-product p {
+  padding: 0.75rem 0;
+}
+
+.single-product-name {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.single-product button {
+  width: 30rem;
+}
+
+.single-product h4 {
+  font-weight: bold;
+  padding: 1.5rem 0;
+}
+
+@media screen and (min-width: 600px) {
+  .single-product p {
+    width: 50vw;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .single-product-page {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 1.5rem;
+    padding-top: 3rem;
+  }
+
+  .single-product {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .single-product img {
+    width: 40rem;
+    height: 40rem;
+  }
+
+  .single-product p {
+    width: 30rem;
+  }
+
+  .single-product button {
+    width: 30rem;
+    margin-left: 0;
+  }
+
+  .single-product-info {
+    text-align: left;
+    margin-left: 3rem;
+  }
+}
+.shopping-bag-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.5rem;
+  padding-top: 3rem;
+}
+
+.shopping-bag-page h1 {
+  padding-bottom: 1.5rem;
+}
+
+.bag-contents {
+  padding: 1.5rem;
+  text-align: center;
+  margin: 3rem 0;
+}
+
+.bag-contents th {
+  font-weight: bold;
+  padding: 0.75rem;
+}
+
+.bag-contents td {
+  padding: 0.75rem;
+}
+
+.bag-contents input {
+  width: 3rem;
+  padding: 1.5rem;
+}
+
+.bin {
+  fill: black;
+}
+
+.bag-info {
+  text-align: center;
+}
+
+.bag-info img {
+  width: 10rem;
+  height: 10rem;
+}
+
+.bag-info p {
+  padding: 0.75rem 0;
+}
+
+.total-price {
+  font-weight: bold;
+  border-top: 2px solid #613B1A;
+}
+
+@media screen and (min-width: 540px) {
+  .bag-contents th, td {
+    padding: 3rem;
+  }
+}
+.shipping-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.5rem;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.shipping-page h1, h3 {
+  text-align: center;
+  padding: 1.5rem;
+}
+
+.shipping-page p {
+  margin: 1.5rem;
+}
+
+.shipping-img {
+  width: 30rem;
+  margin-top: 1.5rem;
+}
+
+@media screen and (min-width: 1240px) {
+  .shipping-page p {
+    width: 75vw;
+  }
+}
+.faq-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.5rem;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.faq-page h1 {
+  text-align: center;
+  padding: 1.5rem;
+}
+
+.faq-page p {
+  margin: 1.5rem;
+}
+
+.faq-page li {
+  list-style-type: disc;
+}
+
+@media screen and (min-width: 1240px) {
+  .faq-page p {
+    width: 75vw;
+  }
+}
+.page-404 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.5rem;
+  padding-top: 3rem;
+  text-align: center;
+}
+
+.page-404 h1 {
+  padding-bottom: 1.5rem;
+}
+
+.page-404 p {
+  margin: 1.5rem;
+}
+
+@media screen and (min-width: 1240px) {
+  .page-404 p {
+    width: 75vw;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */

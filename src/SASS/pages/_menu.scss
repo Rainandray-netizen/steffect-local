@@ -1,0 +1,50 @@
+//Hamburger Menu
+
+#hambody {
+  background-color: $main-color;
+  padding: $main-spacing;
+}
+
+.hamburger-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hamburger-menu img {
+  padding: $main-spacing;
+  padding-bottom: $main-spacing * 2;
+}
+
+#hambody a {
+  color: white;
+}
+
+#hambody a:hover {
+  color: $accent-color;
+}
+
+footer p {
+  color: white;
+  cursor: default;
+}
+
+.hamburger-links {
+  text-transform: uppercase;
+  text-align: center;
+  padding: $main-spacing;
+}
+
+.hamburger-links li {
+  padding: $main-spacing 0 ;
+}
+
+.hamburger-links a {
+  text-decoration: none;
+  color: white;
+  transition: $main-transition;
+}
+
+.hamburger-links a:hover {
+  color: $accent-color;
+}

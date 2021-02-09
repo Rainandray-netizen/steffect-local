@@ -1,0 +1,80 @@
+//Footer
+
+footer {
+  background-color: $main-color;
+  padding: $main-spacing;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+footer img {
+  padding: $main-spacing;
+  padding-bottom: $main-spacing * 2;
+}
+
+footer p {
+  color: white;
+  cursor: default;
+}
+
+.contact-icons svg {
+  padding: $main-spacing;
+}
+
+.contact-icons a:hover {
+  fill: $accent-color;
+}
+
+.footer-links {
+  text-transform: uppercase;
+  text-align: center;
+  padding: $main-spacing;
+}
+
+.footer-links li {
+  padding: $main-spacing 0 ;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: white;
+  transition: $main-transition;
+}
+
+.footer-links a:hover {
+  color: $accent-color;
+}
+
+// Tablet & Desktop View
+
+@media screen and (min-width: 600px) {
+
+  .footer-links {
+    display: flex;
+    flex-direction: row;
+    text-transform: uppercase;
+    text-align: center;
+    padding: $main-spacing;
+    margin: $main-spacing;
+  }
+  
+  .footer-links li {
+    padding: 0 $main-spacing ;
+  }
+  
+  .footer-links a {
+    text-decoration: none;
+    color: white;
+    transition: $main-transition;
+  }
+  
+  .footer-links a:hover {
+    color: $accent-color;
+  }
+
+  footer p {
+    margin-top: $main-spacing;
+  }
+
+}
