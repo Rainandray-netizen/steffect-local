@@ -1,47 +1,53 @@
-import React,{ useEffect } from 'react'
-import getData from '../../utils/apiFunctions'
+import React, { useContext } from 'react'
+import { steffectContext } from '../../Context'
+import loadingGif from '../../assets/icons/loading-spinner.gif'
+import GridProduct from '../GridProduct/GridProduct'
 
 const Products = () => {
+  const { loading, data } = useContext(steffectContext)
 
-  let products
+  return(
+    <main className="products-page">
+    <h1>Products</h1>
+    <div className="all-grid">
+      <form className="products-dropdown">
+        <select name="product-sorter" id="product-sorter">
+          <option value="newest">NEWEST</option>
+          <option value="best-selling">BEST SELLING</option>
+          <option value="price-high-low">PRICE HIGH - LOW</option>
+          <option value="price-low-high">PRICE LOW - HIGH</option>
+        </select>
+        {/* <!-- <br><br> */}
+      {/* /* <input type="submit" value="Submit"> --> */}
+      </form>
+      { loading ? 
+        <div id="loading-container">
+          <img id="loading-spinner" src={ loadingGif } alt="loading" />
+        </div> 
+        : 
+        <section id="products-grid" className="products-grid">
+          {data && data.map((product)=>
+            <GridProduct product={product}/>
+          )}
+        </section>
+        }
+      {/* <!-- Loading Graphic --> */}
+      {/* <div id="loading-container">
+        <img id="loading-spinner" src="/assets/icons/loading-spinner.gif" alt="loading" />
+      </div> */}
 
-  // useEffect(()=>{
-  //   async function getDataInternal(){
-  //     console.log('internal func running')
-  //     products = await getData()
-  //     console.log(products)
-  //   }
-  //   getDataInternal()
-  // },[])
+      {/* <!-- Products Grid --> */}
 
-  // products ? console.log(products) : null
-
-  // if(isLoading){
-  //   return(
-  //     <p>Loading...</p>
-  //   )
-  // }else{
-  //   return(
-  //     <div>
-  //       {products.map((product)=>{
-  //         const {id, title, image, description, price, featured} = product
-  //         console.log({product})
-  //         console.log(product.image[0].url)
-          
-  //         return(
-  //           <article key={id}>
-  //             <img src={`${SERVER_ENDPOINT}${image[0].url}`} alt='#' width='200' height='200'/>
-  //             <h1>{title}</h1>
-  //             <p>{description}</p>
-  //             <h4>{`£${price.toFixed(2)}`}</h4>
-  //             {featured ? <p>Featured item</p> : null}
-  //           </article>
-  //         )
-  //       })}
-  //     </div>
-  //   )
-  // }
-  return(<>Winky face</>)
+        {/* <!-- <div className="grid-product">
+          <img src="./assets/images/products/1.jpeg" alt="">
+          <p className="grid-product-name">Product Name</p>
+          <p>£50</p>
+          <button className="add-to-bag">Add to Bag</button>
+        </div> --> */}
+      
+    </div>
+  </main>
+  )
 }
 
 export default Products
