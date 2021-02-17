@@ -68,6 +68,16 @@
   text-transform: uppercase;
 }
 
+.sale-price{
+  color: red;
+  font-weight: 1600;
+
+}
+
+.old-price{
+  text-decoration: line-through;
+}
+
 // Tablet View
 
 @media screen and (min-width: 540px) {

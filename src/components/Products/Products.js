@@ -4,7 +4,8 @@ import loadingGif from '../../assets/icons/loading-spinner.gif'
 import GridProduct from '../GridProduct/GridProduct'
 
 const Products = () => {
-  const { loading, data } = useContext(steffectContext)
+  const { loading, pages } = useContext(steffectContext)
+  const data = pages.products
 
   return(
     <main className="products-page">
@@ -27,7 +28,7 @@ const Products = () => {
         : 
         <section id="products-grid" className="products-grid">
           {data && data.map((product)=>
-            <GridProduct product={product}/>
+            <GridProduct key={product.id} product={product}/>
           )}
         </section>
         }
