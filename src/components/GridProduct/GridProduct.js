@@ -5,7 +5,7 @@ const GridProduct = ({product}) => {
   const { addToCart } = useContext(steffectContext)
 
   const handleAddToBag = () => {
-    addToCart(id)
+    addToCart(product)
   }
 
   const {id, image, title, price, sale_price } = product
@@ -16,7 +16,10 @@ const GridProduct = ({product}) => {
       <img src={serverEndpoint+image[0].url} alt="" />
       <p className="grid-product-name">{title}</p>
       {sale_price ? 
-      <><p className='old-price'>£{price.toFixed(2)}</p><p className='sale-price'>£{sale_price.toFixed(2)}</p> </>
+        <div className='prices-wrapper'>
+          <p className='sale-price price'>£{sale_price.toFixed(2)}</p> 
+          <p className='old-price price'>£{price.toFixed(2)}</p>
+        </div>
       :
       <p>£{price.toFixed(2)}</p>}
       <button onClick={handleAddToBag} className="add-to-bag">Add to Bag</button>

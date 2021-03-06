@@ -51,6 +51,7 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  height: 40rem;
 }
 
 .grid-product img {
@@ -60,7 +61,7 @@
 }
 
 .grid-product p {
-  padding: ($main-spacing / 2) 0;
+  padding: ($main-spacing / 2);
 }
 
 .grid-product-name {
@@ -71,11 +72,15 @@
 .sale-price{
   color: red;
   font-weight: 1600;
-
 }
 
 .old-price{
   text-decoration: line-through;
+}
+
+.prices-wrapper{
+  display:flex;
+  justify-content: space-around;
 }
 
 // Tablet View

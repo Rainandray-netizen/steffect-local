@@ -513,6 +513,7 @@ footer p {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  height: 40rem;
 }
 
 .grid-product img {
@@ -522,7 +523,7 @@ footer p {
 }
 
 .grid-product p {
-  padding: 0.75rem 0;
+  padding: 0.75rem;
 }
 
 .grid-product-name {
@@ -532,11 +533,16 @@ footer p {
 
 .sale-price {
   color: red;
-  font-weight: 800;
+  font-weight: 1600;
 }
 
 .old-price {
   text-decoration: line-through;
+}
+
+.prices-wrapper {
+  display: flex;
+  justify-content: space-around;
 }
 
 @media screen and (min-width: 540px) {
