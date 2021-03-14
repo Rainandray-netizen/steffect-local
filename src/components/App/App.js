@@ -15,6 +15,7 @@ import Contact from '../Contact/Contact'
 import ShoppingBag from '../ShoppingBag/ShoppingBag'
 import Footer from '../Footer/Footer'
 import Faq from '../Faq/Faq'
+import Checkout from '../Checkout/Checkout'
 
 
 const App = () => {
@@ -43,6 +44,9 @@ const App = () => {
           </Route>
           <Route exact path='/faq'>
             <Faq />
+          </Route>
+          <Route exact path ='/checkout'>
+            <Checkout />
           </Route>
           <Route path='/' default>
             <Home />

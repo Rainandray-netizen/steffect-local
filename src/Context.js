@@ -8,6 +8,7 @@ export const SteffectProvider = (props) => {
   const [ loading, setLoading ] = useState(false)
   const [ cart, setCart] = useState([])
   const [ pages, setPages ] = useState({})
+  const [ totalPrice, setTotalPrice ] = useState(0)
 
   console.log({cart})
 
@@ -27,6 +28,15 @@ export const SteffectProvider = (props) => {
     setLoading(false)
   }
   
+
+  const sumTotal = (arr) => {
+    let sum = 0
+    arr.forEach((item)=>{
+      sum += (item.product.sale_price ? item.product.sale_price : item.product.price) * item.quantity
+    })
+    setTotalPrice(sum)
+  }
+
   const addToCart = (product) => {
     let tempCart = cart
     let finalCart = []
@@ -46,21 +56,33 @@ export const SteffectProvider = (props) => {
     //check if current obj exists in cart
     //if the obj does exist, quantity++
     //else set new property quantity : 1
-    console.log('new cart: ', finalCart)
     setCart(finalCart)
     saveCart(finalCart)
+    sumTotal(finalCart)
+    
+  }
+
+  const removeFromCart = (id) => {
+    let tempCart = cart
+    let finalCart = tempCart.filter(item=> item.product.id !== id)
+    console.log('cart after remove: ', finalCart)
+    saveCart(finalCart)
+    setCart(finalCart)
+    sumTotal(finalCart)
+
   }
 
   const changeQuantity = (product, num) => {
     let tempCart = cart
     let finalCart = []
-    console.log({num})
     const foundIndex = tempCart.findIndex(item=> item.product.id === product.id)
     tempCart[foundIndex].quantity = num
     finalCart = tempCart
-    setCart(finalCart)
     saveCart(finalCart)
-    console.log('new cart updated: ', finalCart)
+    setCart(finalCart)
+    sumTotal(finalCart)
+
+    console.log('context cart: ', finalCart)
   }
 
   const saveCart = (arr)=>{
@@ -71,7 +93,9 @@ export const SteffectProvider = (props) => {
   useEffect(()=>{
     console.log('getting cart info')
     if(localStorage.getItem('myCart')){
-      setCart(JSON.parse(localStorage.getItem('myCart')))
+      const savedCart = JSON.parse(localStorage.getItem('myCart'))
+      setCart(savedCart)
+      sumTotal(savedCart)
     }
     getDataWrapper()
   },[])
@@ -79,12 +103,14 @@ export const SteffectProvider = (props) => {
   return(
       <steffectContext.Provider value={{
         addToCart,
+        removeFromCart,
         loading,
         setLoading,
         cart,
         serverEndpoint,
         pages,
-        changeQuantity
+        changeQuantity,
+        totalPrice
       }}>
         {props.children}
       </steffectContext.Provider>

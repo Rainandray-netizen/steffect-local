@@ -1,11 +1,11 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import ShoppingBagItem from '../ShoppingBagItem/ShoppingBagItem'
 import { steffectContext } from '../../Context'
 import { Link } from 'react-router-dom'
 
 const ShoppingBag = () => {
-  const { cart } = useContext(steffectContext)
-  
+  const { cart, totalPrice } = useContext(steffectContext)
+
   cart.map((item)=>{
     console.log(`quantity: ${item.quantity}`)
   })
@@ -33,7 +33,7 @@ const ShoppingBag = () => {
       <tr className="total-price">
         <td>Total:</td>
         <td></td>
-        <td>£110</td>
+        <td>£{totalPrice}</td>
         <td></td>
       </tr>
     </table>
