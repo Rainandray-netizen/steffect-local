@@ -3,7 +3,9 @@ import { steffectContext } from '../../Context'
 import loadingGif from '../../assets/icons/loading-spinner.gif'
 
 const Faq = () => {
-  const { faq, loading} = useContext(steffectContext)
+  const { pages, loading} = useContext(steffectContext)
+
+  const faq = pages.faq
 
   return(
     <main className="faq-page">

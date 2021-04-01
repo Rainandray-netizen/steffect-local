@@ -6,10 +6,6 @@ import { Link } from 'react-router-dom'
 const ShoppingBag = () => {
   const { cart, totalPrice } = useContext(steffectContext)
 
-  cart.map((item)=>{
-    console.log(`quantity: ${item.quantity}`)
-  })
-
   return(
     <main className="shopping-bag-page">
     <h1>Shopping Bag</h1>
@@ -26,8 +22,9 @@ const ShoppingBag = () => {
         <th>Remove</th>
       </tr>
       
-      {cart.map((item)=>
+      {cart && cart.map((item)=>
         <ShoppingBagItem key={item.product.id} item={item} quantity={item.quantity}/>
+        
       )}
 
       <tr className="total-price">

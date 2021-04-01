@@ -30,6 +30,10 @@ export const SteffectProvider = (props) => {
   
 
   const sumTotal = (arr) => {
+    if (arr === null) {
+      setTotalPrice(0)
+      return
+    }
     let sum = 0
     arr.forEach((item)=>{
       sum += (item.product.sale_price ? item.product.sale_price : item.product.price) * item.quantity
@@ -72,6 +76,12 @@ export const SteffectProvider = (props) => {
 
   }
 
+  const emptyCart = () => {
+    saveCart(null)
+    setCart([])
+    setTotalPrice(0)
+  }
+
   const changeQuantity = (product, num) => {
     let tempCart = cart
     let finalCart = []
@@ -110,7 +120,8 @@ export const SteffectProvider = (props) => {
         serverEndpoint,
         pages,
         changeQuantity,
-        totalPrice
+        totalPrice,
+        emptyCart
       }}>
         {props.children}
       </steffectContext.Provider>

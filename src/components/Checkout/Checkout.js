@@ -1,9 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { loadStripe } from "@stripe/stripe-js";
+import { steffectContext } from '../../Context'
 
 // Make sure to call `loadStripe` outside of a component’s render to avoid
 // recreating the `Stripe` object on every render.
 const stripePromise = loadStripe("pk_test_51IGMwfIz2L1uV3tKJo6OExpW3zfy02jM2mh6c57Kzrz3cUuMIYhZn9cMjkJg8mVB4MjnOhTVgXgkVp0a3qkOztUH00GvISN1z7");
+
 
 const ProductDisplay = ({ handleClick }) => (
   <section>
@@ -32,11 +34,15 @@ const Message = ({ message }) => (
 export default function Checkout() {
   const [message, setMessage] = useState("");
 
+  const { cart, emptyCart } = useContext(steffectContext)
+
+
   useEffect(() => {
     // Check to see if this is a redirect back from Checkout
     const query = new URLSearchParams(window.location.search);
 
     if (query.get("success")) {
+      emptyCart()
       setMessage("Order placed! You will receive an email confirmation.");
     }
 
@@ -57,23 +63,22 @@ export default function Checkout() {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        name:'pingo',
-        game:'bingo'
+        cart
       })
     });
 
     const session = await response.json();
 
     // When the customer clicks on the button, redirect them to Checkout.
-    // const result = await stripe.redirectToCheckout({
-    //   sessionId: session.id,
-    // });
+    const result = await stripe.redirectToCheckout({
+      sessionId: session.id,
+    });
 
-    // if (result.error) {
-    //   // If `redirectToCheckout` fails due to a browser or network
-    //   // error, display the localized error message to your customer
-    //   // using `result.error.message`.
-    // }
+    if (result.error) {
+      // If `redirectToCheckout` fails due to a browser or network
+      // error, display the localized error message to your customer
+      // using `result.error.message`.
+    }
   };
 
   return message ? (

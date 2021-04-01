@@ -301,6 +301,10 @@ svg {
   background-color: goldenrod;
 }
 
+.carousel-root {
+  width: 50vw;
+}
+
 main {
   min-height: 80vh;
 }
