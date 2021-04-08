@@ -140,6 +140,29 @@ svg:hover {
   display: none;
 }
 
+#form-mobile {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 2rem;
+  padding: 0.5rem 0;
+  background-color: white;
+  border-radius: 2rem;
+}
+
+#searchicon-mobile {
+  fill: black;
+}
+
+#searchbar-mobile {
+  width: 80%;
+  padding: 0.5rem;
+  border: none;
+  text-transform: uppercase;
+  transition: all 0.3s ease-in-out;
+}
+
 @media screen and (min-width: 600px) {
   #nav-desktop {
     display: flex;
@@ -155,6 +178,17 @@ svg:hover {
     display: none;
   }
 
+  .nav-inner {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .search-bag {
+    z-index: 2;
+  }
+
   .search-bag svg {
     padding-left: 1.5rem;
   }
@@ -163,6 +197,7 @@ svg:hover {
     width: 100%;
     display: flex;
     justify-content: flex-end;
+    align-items: center;
     position: relative;
   }
 
@@ -187,6 +222,67 @@ svg:hover {
 
   .home-navlinks a:hover {
     color: goldenrod;
+  }
+
+  .form {
+    display: flex;
+    align-items: center;
+    padding: 0.8rem;
+    background-color: #613B1A;
+    border-radius: 2rem;
+    justify-content: flex-end;
+  }
+
+  .form-active {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem;
+    background-color: white;
+    border-radius: 2rem;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .searchicon {
+    fill: white;
+    z-index: 2;
+  }
+
+  .searchicon:hover {
+    fill: goldenrod;
+  }
+
+  .searchicon-active {
+    fill: black;
+  }
+
+  .searchbar {
+    display: inherit;
+    width: 15rem;
+    padding: 0.5rem;
+    border: none;
+    text-transform: uppercase;
+    background-color: #613B1A;
+    pointer-events: none;
+    color: #613B1A;
+  }
+
+  .searchbar-active {
+    display: inherit;
+    width: 15rem;
+    padding: 0.5rem;
+    border: none;
+    text-transform: uppercase;
+    transition: all 0.3s ease-in-out;
+  }
+}
+@media screen and (min-width: 1080px) {
+  #form {
+    width: 30rem;
+  }
+
+  #searchbar {
+    width: 25rem;
   }
 }
 footer {

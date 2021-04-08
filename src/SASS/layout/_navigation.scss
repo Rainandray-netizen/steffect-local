@@ -40,6 +40,30 @@ svg:hover {
   display: none;
 }
 
+//Search Bar
+#form-mobile {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 2rem;
+  padding: 0.5rem 0;
+  background-color: white;
+  border-radius: 2rem;
+}
+
+#searchicon-mobile {
+  fill: black;
+}
+
+#searchbar-mobile {
+  width: 80%;
+  padding: 0.5rem;
+  border: none;
+  text-transform: uppercase;
+  transition: all 0.3s ease-in-out;
+}
+
 // Tablet & Desktop View
 
 @media screen and (min-width: 600px) {
@@ -57,6 +81,16 @@ svg:hover {
     display: none;
   }
 
+  .nav-inner {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .search-bag {
+    z-index: 2;
+  }
   .search-bag svg {
     padding-left: $main-spacing;
   }
@@ -65,6 +99,7 @@ svg:hover {
     width: 100%;
     display: flex;
     justify-content: flex-end;
+    align-items: center;
     position: relative;
   }
 
@@ -89,5 +124,71 @@ svg:hover {
   
   .home-navlinks a:hover {
     color: $accent-color;
+  }
+
+  //Search Bar
+
+  .form {
+    display: flex;
+    // justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem;
+    background-color: $main-color;
+    border-radius: 2rem;
+    justify-content: flex-end;
+  }
+
+  .form-active {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem;
+    background-color: white;
+    border-radius: 2rem;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .searchicon {
+    fill: white;
+    z-index: 2;
+  }
+
+  .searchicon:hover {
+    fill: $accent-color;
+  }
+
+  .searchicon-active {
+    fill: black;
+  }
+
+  .searchbar {
+    display: inherit;
+    width: 15rem;
+    padding: 0.5rem;
+    border: none;
+    text-transform: uppercase;
+    background-color: $main-color;
+    pointer-events: none;
+    color: $main-color;
+  }
+
+  .searchbar-active {
+    display: inherit;
+    width: 15rem;
+    padding: 0.5rem;
+    border: none;
+    text-transform: uppercase;
+    transition: all 0.3s ease-in-out;
+  }
+}
+
+@media screen and (min-width: 1080px) {
+
+  #form {
+    width: 30rem;
+  }
+
+  #searchbar {
+    width: 25rem;
   }
 }
