@@ -12,6 +12,8 @@ const Products = () => {
   const [ selectFilter, setSelectFilter ] = useState('newest')
   const [ searchFilter, setSearchFilter ] = useState('')
 
+
+
   useEffect(()=>{
     if(pages){
       setAllProducts(pages.products)
@@ -38,11 +40,6 @@ const Products = () => {
   useEffect(()=>{
     applyFilters(allProducts)
   })
-
-  // useEffect(()=>{
-  //   console.log('search filter changed')
-  //   applyFilters(allProducts)
-  // },[searchFilter])
 
   const applyFilters = (passedData) => {
     let tempData = passedData
