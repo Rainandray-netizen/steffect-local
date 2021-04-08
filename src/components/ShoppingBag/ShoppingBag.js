@@ -6,10 +6,16 @@ import { Link } from 'react-router-dom'
 const ShoppingBag = () => {
   const { cart, totalPrice } = useContext(steffectContext)
 
+  const itemsReducer = (accumulator, currentValue) => accumulator + currentValue.quantity
+
+  const totalItems = cart.reduce(itemsReducer)
+
+  console.log(totalItems)
+
   return(
     <main className="shopping-bag-page">
     <h1>Shopping Bag</h1>
-    <p className="bag-counter">Your bag (0)</p>
+    <p className="bag-counter">Your bag ({cart.length})</p>
 
     {/* <!-- If bag is empty, display 'Your shopping bag is empty.' with a 'continue shopping' button--> */}
     <Link to="/products"><button className="add-to-bag">Continue Shopping</button></Link>

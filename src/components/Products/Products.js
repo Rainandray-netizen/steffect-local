@@ -5,51 +5,50 @@ import GridProduct from '../GridProduct/GridProduct'
 import { useEffect } from 'react/cjs/react.development'
 
 const Products = () => {
-  const { loading, pages } = useContext(steffectContext)
-  const [ allProducts, setAllProducts ] = useState([])
-  const [ data, setData ] = useState([])
+  const { loading, products } = useContext(steffectContext)
+  const [ allProducts, setAllProducts ] = useState(products)
+  const [ data, setData ] = useState(products)
   const [ forceRerender, triggerRerender ] = useState(true)
   const [ selectFilter, setSelectFilter ] = useState('newest')
   const [ searchFilter, setSearchFilter ] = useState('')
 
-
+  useEffect(()=>{
+    setAllProducts(products)
+  },[products])
 
   useEffect(()=>{
-    if(pages){
-      setAllProducts(pages.products)
-      setData(pages.products)
-    }
-  },[pages])
+    // console.log('filter changed')
+    applyFilters(allProducts)
+  },[selectFilter])
 
   useEffect(()=>{
-    if(pages){
-      setAllProducts(pages.products)
-      setData(pages.products)
-    }
-  },[])
-
-  // useEffect(()=>{
-  //   // console.log('filter changed')
-  //   applyFilters(allProducts)
-  // },[selectFilter])
-
-  useEffect(()=>{
+    console.log('loading filter triggered')
     applyFilters(allProducts)
   },[loading])
 
   useEffect(()=>{
     applyFilters(allProducts)
-  })
+  },[])
+
+  useEffect(()=>{
+    applyFilters(allProducts)
+  },[searchFilter])
 
   const applyFilters = (passedData) => {
+    if (passedData.toString() === '') {
+      console.log('here is data: ', passedData)
+    }
     let tempData = passedData
 
-    if(searchFilter!==''){
+    console.log({passedData})
+
+    if(searchFilter!==""){
       let lowerCasedFilter = searchFilter.toLowerCase()
       tempData = tempData.filter((product)=> product.title.toLowerCase().includes(lowerCasedFilter))
       // tempData
     }else{
-      tempData = allProducts
+      console.log('new results: ', allProducts)
+      tempData = allProducts 
     }
 
     if(selectFilter === 'newest' && tempData){

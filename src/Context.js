@@ -9,6 +9,7 @@ export const SteffectProvider = (props) => {
   const [ cart, setCart] = useState([])
   const [ pages, setPages ] = useState({})
   const [ totalPrice, setTotalPrice ] = useState(0)
+  const [ products, setProducts ] = useState([])
 
   console.log({cart})
 
@@ -19,12 +20,12 @@ export const SteffectProvider = (props) => {
     const newAbout = await getData('about-page')
     const newContact = await getData('contact-page')
     const newPages = {
-      products: newProducts,
       faq: newFaq,
       about: newAbout,
       contact: newContact
     }
     setPages(newPages)
+    setProducts(newProducts)
     setLoading(false)
   }
   
@@ -119,6 +120,7 @@ export const SteffectProvider = (props) => {
         cart,
         serverEndpoint,
         pages,
+        products,
         changeQuantity,
         totalPrice,
         emptyCart
