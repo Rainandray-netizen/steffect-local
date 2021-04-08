@@ -17,8 +17,6 @@ import Footer from '../Footer/Footer'
 import Faq from '../Faq/Faq'
 import Checkout from '../Checkout/Checkout'
 
-//hello
-
 const App = () => {
   return (
     <SteffectProvider>
