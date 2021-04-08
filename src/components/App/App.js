@@ -17,9 +17,10 @@ import Footer from '../Footer/Footer'
 import Faq from '../Faq/Faq'
 import Checkout from '../Checkout/Checkout'
 
+//hello
 
 const App = () => {
-  return(
+  return (
     <SteffectProvider>
       <Router>
         <Nav />
@@ -45,7 +46,7 @@ const App = () => {
           <Route exact path='/faq'>
             <Faq />
           </Route>
-          <Route exact path ='/checkout'>
+          <Route exact path='/checkout'>
             <Checkout />
           </Route>
           <Route path='/' default>
