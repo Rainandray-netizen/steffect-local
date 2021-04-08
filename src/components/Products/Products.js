@@ -4,6 +4,8 @@ import loadingGif from '../../assets/icons/loading-spinner.gif'
 import GridProduct from '../GridProduct/GridProduct'
 import { useEffect } from 'react/cjs/react.development'
 
+//TODO: explain fork
+
 const Products = () => {
   const { loading, pages } = useContext(steffectContext)
   const [ allProducts, setAllProducts ] = useState([])
