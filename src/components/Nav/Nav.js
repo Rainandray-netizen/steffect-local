@@ -1,14 +1,26 @@
 import React, { useContext, useState } from 'react'
+import { useHistory } from 'react-router'
 import { steffectContext } from '../../Context'
 import { Link } from 'react-router-dom'
 import '../../CSS/styles.css'
 
 const Nav = () => {
+  const history = useHistory()
   const { cart, setCart, serverEndpoint } = useContext(steffectContext)
   const [searchActive, setSearchActive] = useState(false)
 
   const handleSearchActive = () => {
     setSearchActive(!searchActive)
+  }
+
+  const handleSearchInput = (e) => {
+    //TODO: Check if search bar is empty, then either close bar or go to products page
+    //on submit go to products page
+    e.preventDefault()
+    console.log('BING BONG')
+    history.push({
+      pathname: '/products'
+    })
   }
 
   return (
@@ -49,7 +61,7 @@ const Nav = () => {
       <nav id="nav-desktop">
         <div className="nav-inner">
           <div className="nav-buttons">
-            <form id="form" className={searchActive ? 'form-active' : 'form'}>
+            <form id="form"  onSubmit={handleSearchInput} className={searchActive ? 'form-active' : 'form'}>
               <input type="text" id="searchbar" className={searchActive ? 'searchbar-active' : 'searchbar'} name="searchbar" min="1" max="20" placeholder="Search" />
               <svg onClick={handleSearchActive} id="searchicon" className={searchActive ? 'searchicon-active' : 'searchicon'} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                 <path

@@ -12,6 +12,8 @@ const Products = () => {
   const [ data, setData ] = useState(products)
   const [ forceRerender, triggerRerender ] = useState(true)
   const [ selectFilter, setSelectFilter ] = useState('newest')
+
+  //this should be in state
   const [ searchFilter, setSearchFilter ] = useState('')
 
   useEffect(()=>{
