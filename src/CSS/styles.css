@@ -267,6 +267,10 @@ svg:hover {
     color: #613B1A;
   }
 
+  .searchbar::placeholder {
+    color: transparent;
+  }
+
   .searchbar-active {
     display: inherit;
     width: 15rem;

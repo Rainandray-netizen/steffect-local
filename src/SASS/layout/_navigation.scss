@@ -171,6 +171,9 @@ svg:hover {
     pointer-events: none;
     color: $main-color;
   }
+  .searchbar::placeholder{
+    color:transparent;
+  }
 
   .searchbar-active {
     display: inherit;
