@@ -2,9 +2,65 @@ import React, { useContext, useEffect, useState } from 'react'
 import ShoppingBagItem from '../ShoppingBagItem/ShoppingBagItem'
 import { steffectContext } from '../../Context'
 import { Link } from 'react-router-dom'
+import { useHistory } from 'react-router'
+import { loadStripe } from "@stripe/stripe-js";
 
 const ShoppingBag = () => {
-  const { cart, totalPrice, cartCount } = useContext(steffectContext)
+  const stripeKey = process.env.REACT_APP_STRIPE_TOKEN
+  const validationServer = process.env.REACT_APP_VALIDATION_SERVER_ENDPOINT
+  const history = useHistory()
+  const stripePromise = loadStripe(stripeKey);
+  const { cart, totalPrice, cartCount, emptyCart } = useContext(steffectContext)
+
+  //Stripe things
+
+  useEffect(() => {
+    // Check to see if this is a redirect back from Checkout
+    const query = new URLSearchParams(window.location.search);
+
+    if (query.get("success")) {
+      emptyCart()
+      history.push({
+        pathname: '/order-success'
+      })
+    }
+
+    if (query.get("canceled")) {
+      history.push({
+        pathname: '/order-cancelled'
+      })
+    }
+  }, []);
+
+  const handleClick = async (event) => {
+    const stripe = await stripePromise;
+
+    const response = await fetch(`${validationServer}/create-checkout-session`, {
+      method: "POST",
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        cart
+      })
+    });
+
+    const session = await response.json();
+
+    // When the customer clicks on the button, redirect them to Checkout.
+    const result = await stripe.redirectToCheckout({
+      sessionId: session.id,
+    });
+
+    if (result.error) {
+      // If `redirectToCheckout` fails due to a browser or network
+      // error, display the localized error message to your customer
+      // using `result.error.message`.
+    }
+  };
+
+  //End stripe things
 
   return(
     <main className="shopping-bag-page">
@@ -36,8 +92,7 @@ const ShoppingBag = () => {
         </tr>
       </tbody>
     </table>
-    <a href="#"><button className="add-to-bag">Check Out</button></a>
-
+    <button onClick={handleClick} role="link" className="add-to-bag">Check Out</button>
   </main>
   )
 }

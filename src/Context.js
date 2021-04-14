@@ -88,7 +88,7 @@ export const SteffectProvider = (props) => {
   }
 
   const emptyCart = () => {
-    saveCart(null)
+    saveCart('')
     setCart([])
     setTotalPrice(0)
     setCartCount(0)

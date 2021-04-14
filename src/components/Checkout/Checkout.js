@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
+import { useHistory } from 'react-router'
 import { loadStripe } from "@stripe/stripe-js";
 import { steffectContext } from '../../Context'
 
@@ -32,6 +33,7 @@ const Message = ({ message }) => (
 );
 
 export default function Checkout() {
+  const history = useHistory()
   const [message, setMessage] = useState("");
 
   const { cart, emptyCart } = useContext(steffectContext)
@@ -43,7 +45,9 @@ export default function Checkout() {
 
     if (query.get("success")) {
       emptyCart()
-      setMessage("Order placed! You will receive an email confirmation.");
+      history.push({
+        pathname: '/order-success'
+      })
     }
 
     if (query.get("canceled")) {

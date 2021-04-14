@@ -23,7 +23,13 @@ const ShoppingBagItem = ( {item, quantity} ) => {
           <div className="bag-info">
             <img src={serverEndpoint+image[0].url} alt="" />
             <p className="grid-product-name">{title}</p>
-            <p>£{sale_price ? sale_price : price}</p>
+            {sale_price ? 
+            <div className='prices-wrapper'>
+              <p className='sale-price price'>£{sale_price.toFixed(2)}</p> 
+              <p className='old-price price'>£{price.toFixed(2)}</p>
+            </div>
+            :
+            <p>£{price.toFixed(2)}</p>}
           </div>
         </td>
         <td><input type="number" value={currentQuantity} onChange={handleChange}/></td>

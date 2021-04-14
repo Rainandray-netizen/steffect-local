@@ -16,6 +16,8 @@ import ShoppingBag from '../ShoppingBag/ShoppingBag'
 import Footer from '../Footer/Footer'
 import Faq from '../Faq/Faq'
 import Checkout from '../Checkout/Checkout'
+import OrderSuccess from '../OrderSuccess/OrderSuccess'
+import OrderCancelled from '../OrderCancelled/OrderCancelled'
 
 const App = () => {
   return (
@@ -46,6 +48,12 @@ const App = () => {
           </Route>
           <Route exact path='/checkout'>
             <Checkout />
+          </Route>
+          <Route exact path='/order-success'>
+            <OrderSuccess />
+          </Route>
+          <Route exact path='/order-cancelled'>
+            <OrderCancelled />
           </Route>
           <Route path='/' default>
             <Home />
