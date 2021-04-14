@@ -7,14 +7,13 @@ import { useEffect } from 'react/cjs/react.development'
 //TODO: explain fork
 
 const Products = () => {
-  const { loading, products } = useContext(steffectContext)
+  const { loading, products, searchFilter } = useContext(steffectContext)
   const [ allProducts, setAllProducts ] = useState(products)
   const [ data, setData ] = useState(products)
   const [ forceRerender, triggerRerender ] = useState(true)
   const [ selectFilter, setSelectFilter ] = useState('newest')
 
   //this should be in state
-  const [ searchFilter, setSearchFilter ] = useState('')
 
   useEffect(()=>{
     setAllProducts(products)
@@ -26,7 +25,7 @@ const Products = () => {
   },[selectFilter])
 
   useEffect(()=>{
-    console.log('loading filter triggered')
+    // console.log('loading filter triggered')
     applyFilters(allProducts)
   },[loading])
 
@@ -39,19 +38,15 @@ const Products = () => {
   },[searchFilter])
 
   const applyFilters = (passedData) => {
-    if (passedData.toString() === '') {
-      console.log('here is data: ', passedData)
-    }
     let tempData = passedData
 
-    console.log({passedData})
+    // console.log({passedData})
 
     if(searchFilter!==""){
       let lowerCasedFilter = searchFilter.toLowerCase()
       tempData = tempData.filter((product)=> product.title.toLowerCase().includes(lowerCasedFilter))
       // tempData
     }else{
-      console.log('new results: ', allProducts)
       tempData = allProducts 
     }
 
@@ -87,16 +82,11 @@ const Products = () => {
     setSelectFilter(e.target.value)
   }
 
-  const handleSearchChange = e => {
-    setSearchFilter(e.target.value)
-  }
-
   return(
     <main className="products-page">
     <h1>Products</h1>
     <div className="all-grid">
       <form className="products-dropdown">
-        <input onChange={handleSearchChange}/>
         <select onChange={handleSelectChange} name="product-sorter" id="product-sorter">
           <option value="newest">NEWEST</option>
           {/* <option value="best-selling">BEST SELLING</option> */}

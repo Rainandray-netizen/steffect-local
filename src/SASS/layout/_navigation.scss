@@ -64,6 +64,22 @@ svg:hover {
   transition: all 0.3s ease-in-out;
 }
 
+//cart icon styles
+.cart-counter-circle{
+  color:white;
+  background-color: red;
+  border-radius:100px;
+  position:absolute;
+  // padding: 5px;
+  right:0px;
+  top:0px;
+  font-size: 1rem;
+  height:1rem;
+  width:1rem;
+  text-align: center;
+  padding:1px;
+}
+
 // Tablet & Desktop View
 
 @media screen and (min-width: 600px) {
