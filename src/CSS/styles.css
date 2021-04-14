@@ -170,11 +170,18 @@ svg:hover {
   position: absolute;
   right: 0px;
   top: 0px;
+  height: 1.5rem;
+  width: 1.5rem;
+  padding: 0.1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0.5rem;
+}
+.cart-counter-circle p {
   font-size: 1rem;
-  height: 1rem;
-  width: 1rem;
   text-align: center;
-  padding: 1px;
+  font-weight: bold;
 }
 
 @media screen and (min-width: 600px) {
