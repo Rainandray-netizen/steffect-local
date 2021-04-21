@@ -8,7 +8,7 @@ import NotFound from '../404/404'
 const SingleProduct = () => {
   const { loading, products, serverEndpoint, addToCart } = useContext(steffectContext)
 
-  const [ productLocated, setProductLocated ] = useState(false)
+  const [productLocated, setProductLocated] = useState(false)
 
   let { id } = useParams()
 
@@ -22,39 +22,39 @@ const SingleProduct = () => {
   }
 
   //if loading completes while page is being viewed, set the product
-  useEffect(()=>{
+  useEffect(() => {
     products && locateProduct()
-  },[loading])
+  }, [loading])
 
   //try to locate product the first time page rerenders
-  useEffect(()=>{
+  useEffect(() => {
     products && locateProduct()
-  },[])
+  }, [])
 
   //Invalid Id provided => 404
-  if(!id){
-    return(
+  if (!id) {
+    return (
       <NotFound />
     )
   }
 
-  if(!productLocated && !loading){
-    return(
+  if (!productLocated && !loading) {
+    return (
       <NotFound />
     )
   }
 
-  return(
+  return (
     <main className="single-product-page">
-      
+
       {loading ? //show loading wheel when loading
         <div id="loading-container">
-          <img id="loading-spinner" src={ loadingGif } alt="loading" />
+          <img id="loading-spinner" src={loadingGif} alt="loading" />
         </div>
         :
         //christine work here
         <>
-          <div>
+          <div className="linktree">
             <Link to='/'>Home</Link>
             <p>{'>'}</p>
             <Link to='/products'>Products</Link>
@@ -63,27 +63,27 @@ const SingleProduct = () => {
 
           </div>
           <div className="single-product">
-          <img src={serverEndpoint+productLocated.image[0].url} alt="" />
-          <div className="single-product-info">
-            <p className="single-product-name">{productLocated.title}</p>
-            {productLocated.sale_price ? 
-              <div className='single-product-prices-wrapper'>
-                <p className='sale-price price'>£{productLocated.sale_price.toFixed(2)}</p> 
-                <p className='old-price price'>£{productLocated.price.toFixed(2)}</p>
+            <img src={serverEndpoint + productLocated.image[0].url} alt="" />
+            <div className="single-product-info">
+              <p className="single-product-name">{productLocated.title}</p>
+              {productLocated.sale_price ?
+                <div className='single-product-prices-wrapper'>
+                  <p className='sale-price price'>£{productLocated.sale_price.toFixed(2)}</p>
+                  <p className='old-price price'>£{productLocated.price.toFixed(2)}</p>
+                </div>
+                :
+                <p>£{productLocated.price.toFixed(2)}</p>
+              }
+              <button className="add-to-bag" onClick={handleAddToBag}>Add to Bag</button>
+              <h4>Product Description</h4>
+              <div>
+                <p>{productLocated.description}</p>
               </div>
-              :
-              <p>£{productLocated.price.toFixed(2)}</p>
-            }
-            <button className="add-to-bag" onClick={handleAddToBag}>Add to Bag</button>
-            <h4>Product Description</h4>
-            <div>
-              <p>{productLocated.description}</p>
             </div>
           </div>
-        </div>
-      </>
+        </>
       }
-      
+
     </main>
   )
 }

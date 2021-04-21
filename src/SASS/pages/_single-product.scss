@@ -8,12 +8,43 @@
   padding-top: $main-spacing * 2;
 }
 
+.linktree {
+  display: flex;
+  align-items: center;
+  width: 90%;
+  padding: 0 0 ($main-spacing * 2) 0;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+
+  a {
+    color: black;
+    cursor: pointer;
+    transition: 0.3s ease;
+  }
+
+  a:hover {
+    color: $accent-color;
+  }
+
+  span {
+    font-size: 1.2rem;
+    cursor: default;
+  }
+
+  p {
+    margin: 0 1rem;
+  }
+}
+
+
 .single-product {
   text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  cursor: default;
 }
 
 .single-product img {
@@ -29,6 +60,7 @@
 .single-product-name {
   font-weight: bold;
   text-transform: uppercase;
+  cursor: default;
 }
 
 .single-product button {
@@ -40,21 +72,29 @@
   padding: $main-spacing 0;
 }
 
+.single-product-prices-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+  p {
+    width: 6rem;
+  }
+}
+
 //Tablet View 
 
 @media screen and (min-width: 600px) {
-  .single-product p {
-    width: 50vw;
-  }
+
 }
 // Desktop View
 
 @media screen and (min-width: 1024px) {
   .single-product-page {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
     padding: $main-spacing;
     padding-top: $main-spacing * 2;
   }
@@ -82,5 +122,16 @@
   .single-product-info {
     text-align: left;
     margin-left: $main-spacing * 2;
+  }
+
+  .single-product-prices-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    width: 30rem;
+
+    p {
+      width: 6rem;
+    }
   }
 }
