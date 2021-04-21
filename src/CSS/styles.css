@@ -79,6 +79,7 @@ h1 {
   font-weight: bold;
   font-family: "BodoniFLF";
   text-transform: uppercase;
+  cursor: default;
 }
 
 h2 {
@@ -86,6 +87,7 @@ h2 {
   font-weight: bold;
   font-family: "BodoniFLF";
   text-transform: uppercase;
+  cursor: default;
 }
 
 h3 {
@@ -93,6 +95,7 @@ h3 {
   font-weight: bold;
   font-family: "BodoniFLF";
   text-transform: uppercase;
+  cursor: default;
 }
 
 h4, p, li, span, label, table {
@@ -638,20 +641,16 @@ footer p {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  height: 40rem;
 }
-
 .grid-product img {
   width: 15rem;
   height: 15rem;
   padding-bottom: 0.75rem;
 }
-
 .grid-product a {
   text-decoration: none;
   color: black;
 }
-
 .grid-product p {
   padding: 0.75rem;
 }
@@ -663,7 +662,6 @@ footer p {
 
 .sale-price {
   color: red;
-  font-weight: 1600;
 }
 
 .old-price {
@@ -673,19 +671,6 @@ footer p {
 .prices-wrapper {
   display: flex;
   justify-content: center;
-}
-.prices-wrapper p {
-  width: auto !important;
-  margin-right: 1rem;
-}
-
-.single-product-prices-wrapper {
-  display: flex;
-  justify-content: flex-start;
-}
-.single-product-prices-wrapper p {
-  width: auto !important;
-  margin-right: 1rem;
 }
 
 @media screen and (min-width: 540px) {
@@ -732,6 +717,15 @@ footer p {
     height: 20rem;
     padding-bottom: 0.75rem;
   }
+
+  .sale-price {
+    color: red;
+  }
+
+  .old-price {
+    text-decoration: line-through;
+    margin: 0 0.5rem;
+  }
 }
 @media screen and (min-width: 1240px) {
   .products-page {
@@ -761,12 +755,38 @@ footer p {
   padding-top: 3rem;
 }
 
+.linktree {
+  display: flex;
+  align-items: center;
+  width: 90%;
+  padding: 0 0 3rem 0;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.linktree a {
+  color: black;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+.linktree a:hover {
+  color: goldenrod;
+}
+.linktree span {
+  font-size: 1.2rem;
+  cursor: default;
+}
+.linktree p {
+  margin: 0 1rem;
+}
+
 .single-product {
   text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  cursor: default;
 }
 
 .single-product img {
@@ -782,6 +802,7 @@ footer p {
 .single-product-name {
   font-weight: bold;
   text-transform: uppercase;
+  cursor: default;
 }
 
 .single-product button {
@@ -793,17 +814,21 @@ footer p {
   padding: 1.5rem 0;
 }
 
-@media screen and (min-width: 600px) {
-  .single-product p {
-    width: 50vw;
-  }
+.single-product-prices-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
+.single-product-prices-wrapper p {
+  width: 6rem;
+}
+
 @media screen and (min-width: 1024px) {
   .single-product-page {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
     padding: 1.5rem;
     padding-top: 3rem;
   }
@@ -831,6 +856,16 @@ footer p {
   .single-product-info {
     text-align: left;
     margin-left: 3rem;
+  }
+
+  .single-product-prices-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    width: 30rem;
+  }
+  .single-product-prices-wrapper p {
+    width: 6rem;
   }
 }
 .shopping-bag-page {

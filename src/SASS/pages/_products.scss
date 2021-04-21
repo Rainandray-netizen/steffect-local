@@ -51,21 +51,21 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  height: 40rem;
-}
 
-.grid-product img {
+  img {
   width: 15rem;
   height: 15rem;
   padding-bottom: $main-spacing / 2;
 }
-.grid-product a {
+
+  a {
   text-decoration: none;
   color: black;
-}
+  }
 
-.grid-product p {
+  p {
   padding: ($main-spacing / 2);
+  }
 }
 
 .grid-product-name {
@@ -73,9 +73,8 @@
   text-transform: uppercase;
 }
 
-.sale-price{
+.sale-price {
   color: red;
-  font-weight: 1600;
 }
 
 .old-price{
@@ -83,22 +82,8 @@
 }
 
 .prices-wrapper{
-  display:flex;
+  display: flex;
   justify-content: center;
-  p{
-    width:auto !important;
-    margin-right:1rem;
-  }
-}
-
-.single-product-prices-wrapper{
-  display:flex;
-  justify-content: flex-start;
-  p{
-    width:auto !important;
-    margin-right:1rem;
-  }
-
 }
 
 // Tablet View
@@ -153,6 +138,15 @@
     width: 20rem;
     height: 20rem;
     padding-bottom: $main-spacing / 2;
+  }
+
+  .sale-price {
+    color: red;
+  }
+  
+  .old-price {
+    text-decoration: line-through;
+    margin: 0 0.5rem;
   }
 }
 
