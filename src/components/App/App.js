@@ -18,6 +18,8 @@ import Faq from '../Faq/Faq'
 import Checkout from '../Checkout/Checkout'
 import OrderSuccess from '../OrderSuccess/OrderSuccess'
 import OrderCancelled from '../OrderCancelled/OrderCancelled'
+import SingleProduct from '../SingleProduct/SingleProduct'
+import NotFound from "../404/404";
 
 const App = () => {
   return (
@@ -35,7 +37,7 @@ const App = () => {
             <Contact />
           </Route>
           <Route path='/product/:id'>
-            <p>single product</p>
+            <SingleProduct /> 
           </Route>
           <Route exact path='/menu'>
             <p>menu</p>
@@ -55,8 +57,11 @@ const App = () => {
           <Route exact path='/order-cancelled'>
             <OrderCancelled />
           </Route>
-          <Route path='/' default>
+          <Route exact path='/'>
             <Home />
+          </Route>
+          <Route>
+            <NotFound default />
           </Route>
         </Switch>
         <Footer />

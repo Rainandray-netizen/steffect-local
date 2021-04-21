@@ -8,6 +8,7 @@ import { useEffect } from 'react/cjs/react.development'
 
 const Products = () => {
   const { loading, products, searchFilter } = useContext(steffectContext)
+  
   const [ allProducts, setAllProducts ] = useState(products)
   const [ data, setData ] = useState(products)
   const [ forceRerender, triggerRerender ] = useState(true)

@@ -52,6 +52,7 @@ export const SteffectProvider = (props) => {
   }
 
   const addToCart = (product) => {
+    console.log({product})
     let tempCart = cart
     console.log({tempCart})
     let finalCart = []

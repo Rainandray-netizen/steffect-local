@@ -59,6 +59,10 @@
   height: 15rem;
   padding-bottom: $main-spacing / 2;
 }
+.grid-product a {
+  text-decoration: none;
+  color: black;
+}
 
 .grid-product p {
   padding: ($main-spacing / 2);
@@ -80,7 +84,21 @@
 
 .prices-wrapper{
   display:flex;
-  justify-content: space-around;
+  justify-content: center;
+  p{
+    width:auto !important;
+    margin-right:1rem;
+  }
+}
+
+.single-product-prices-wrapper{
+  display:flex;
+  justify-content: flex-start;
+  p{
+    width:auto !important;
+    margin-right:1rem;
+  }
+
 }
 
 // Tablet View

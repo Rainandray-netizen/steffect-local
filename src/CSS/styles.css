@@ -647,6 +647,11 @@ footer p {
   padding-bottom: 0.75rem;
 }
 
+.grid-product a {
+  text-decoration: none;
+  color: black;
+}
+
 .grid-product p {
   padding: 0.75rem;
 }
@@ -667,7 +672,20 @@ footer p {
 
 .prices-wrapper {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+}
+.prices-wrapper p {
+  width: auto !important;
+  margin-right: 1rem;
+}
+
+.single-product-prices-wrapper {
+  display: flex;
+  justify-content: flex-start;
+}
+.single-product-prices-wrapper p {
+  width: auto !important;
+  margin-right: 1rem;
 }
 
 @media screen and (min-width: 540px) {
