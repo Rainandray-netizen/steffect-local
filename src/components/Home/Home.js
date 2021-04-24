@@ -13,13 +13,13 @@ const Home = () => {
       setFeaturedProducts(featured)
     }
   },[loading])
-
+  
   useEffect(()=>{
     if (products !== undefined && featuredProducts[0] === undefined){
       let featured = products.filter(product => product.featured)
       setFeaturedProducts(featured)
     }
-  },[])
+  },[loading])
   
 
   console.log(featuredProducts[0])
@@ -42,10 +42,12 @@ const Home = () => {
       <FeaturedCarousel>
         {featuredProducts.length > 0 ?
           featuredProducts.map(product =>
-            <div className='carousel-block'>
-              <img src={serverEndpoint+product.image[0].url} />
-              <p>{product.title}</p>
-            </div>
+            <Link to={`/product/${product.id}`}>
+              <div className='carousel-block'>
+                <img src={serverEndpoint+product.image[0].url} />
+                <p>{product.title}</p>
+              </div>
+            </Link >
           )
           :
           <div>

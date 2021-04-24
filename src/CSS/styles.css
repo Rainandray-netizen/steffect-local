@@ -431,6 +431,10 @@ svg {
   width: 500px;
   margin-bottom: 3rem;
 }
+.slick-slider-wrapper a {
+  text-decoration: none;
+  color: black;
+}
 
 .carousel-block img {
   width: 500px;
