@@ -2,6 +2,8 @@
    v2.0 | 20110126
    License: none (public domain)
 */
+@import url("https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css");
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -425,8 +427,17 @@ svg {
   background-color: goldenrod;
 }
 
-.carousel-root {
-  width: 50vw;
+.slick-slider-wrapper {
+  width: 500px;
+  margin-bottom: 3rem;
+}
+
+.carousel-block img {
+  width: 500px;
+  height: 500px;
+}
+.carousel-block p {
+  margin: 1rem;
 }
 
 main {

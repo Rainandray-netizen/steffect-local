@@ -20,6 +20,7 @@ import OrderSuccess from '../OrderSuccess/OrderSuccess'
 import OrderCancelled from '../OrderCancelled/OrderCancelled'
 import SingleProduct from '../SingleProduct/SingleProduct'
 import NotFound from "../404/404";
+import ShippingReturns from '../ShippingReturns/ShippingReturns'
 
 const App = () => {
   return (
@@ -50,6 +51,9 @@ const App = () => {
           </Route>
           <Route exact path='/checkout'>
             <Checkout />
+          </Route>
+          <Route exact path={'/shipping&returns'}>
+            <ShippingReturns />
           </Route>
           <Route exact path='/order-success'>
             <OrderSuccess />

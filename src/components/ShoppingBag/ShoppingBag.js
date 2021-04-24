@@ -65,11 +65,16 @@ const ShoppingBag = () => {
   return(
     <main className="shopping-bag-page">
     <h1>Shopping Bag</h1>
-    <p className="bag-counter">Your bag ({cartCount})</p>
+    {cartCount ? 
+      <p className="bag-counter">Your bag ({cartCount})</p> 
+    :
+      <p>Your shopping bag is empty.</p>
+    }
 
     {/* <!-- If bag is empty, display 'Your shopping bag is empty.' with a 'continue shopping' button--> */}
     <Link to="/products"><button className="add-to-bag">Continue Shopping</button></Link>
 
+    {cartCount ? <>
     <table className="bag-contents">
       <tbody>
         <tr>
@@ -93,6 +98,7 @@ const ShoppingBag = () => {
       </tbody>
     </table>
     <button onClick={handleClick} role="link" className="add-to-bag">Check Out</button>
+    </>: null}
   </main>
   )
 }

@@ -28,10 +28,12 @@ export const SteffectProvider = (props) => {
     const newFaq = await getData('faq-page')
     const newAbout = await getData('about-page')
     const newContact = await getData('contact-page')
+    const newShipping = await getData('shipping-and-returns')
     const newPages = {
       faq: newFaq,
       about: newAbout,
-      contact: newContact
+      contact: newContact,
+      shipping: newShipping
     }
     setPages(newPages)
     setProducts(newProducts)

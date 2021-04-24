@@ -6,7 +6,9 @@ const NotFound = () => {
     <main className="page-404">
       <h1>404 Page Not Found</h1>
       <p>The page you requested does not exist.</p>
-      <button className="add-to-bag">Continue Shopping</button>
+      <Link to='/products'>
+        <button className="add-to-bag">Continue Shopping</button>
+      </Link>
     </main>
   )
 }

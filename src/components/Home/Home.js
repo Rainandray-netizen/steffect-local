@@ -1,17 +1,26 @@
-import React, {useContext, useState} from 'react'
+import React, {useContext, useState, useEffect} from 'react'
 import { Link } from 'react-router-dom'
-import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
-import { Carousel } from 'react-responsive-carousel';
-import {steffectContext} from '../../Context'
+import { steffectContext } from '../../Context'
+import FeaturedCarousel from '../Carousels/FeaturedCarousel'
 
 const Home = () => {
   const [ featuredProducts, setFeaturedProducts ] = useState([])
-  const { pages, loading, serverEndpoint} = useContext(steffectContext)
+  const { products, loading, serverEndpoint} = useContext(steffectContext)
   
-  if (pages.products !== undefined && featuredProducts[0] === undefined){
-    let featured = pages.products.filter(product => product.featured)
-    setFeaturedProducts(featured)
-  }
+  useEffect(()=>{
+    if (products !== undefined && featuredProducts[0] === undefined){
+      let featured = products.filter(product => product.featured)
+      setFeaturedProducts(featured)
+    }
+  },[loading])
+
+  useEffect(()=>{
+    if (products !== undefined && featuredProducts[0] === undefined){
+      let featured = products.filter(product => product.featured)
+      setFeaturedProducts(featured)
+    }
+  },[])
+  
 
   console.log(featuredProducts[0])
 
@@ -30,10 +39,10 @@ const Home = () => {
         loading
       </div>
       :
-      <Carousel>
+      <FeaturedCarousel>
         {featuredProducts.length > 0 ?
           featuredProducts.map(product =>
-            <div>
+            <div className='carousel-block'>
               <img src={serverEndpoint+product.image[0].url} />
               <p>{product.title}</p>
             </div>
@@ -43,7 +52,21 @@ const Home = () => {
             no featured products at this time
           </div>
         }
-      </Carousel>
+      </FeaturedCarousel>
+      // <Carousel>
+      //   {featuredProducts.length > 0 ?
+      //     featuredProducts.map(product =>
+      //       <div>
+      //         <img src={serverEndpoint+product.image[0].url} />
+      //         <p>{product.title}</p>
+      //       </div>
+      //     )
+      //     :
+      //     <div>
+      //       no featured products at this time
+      //     </div>
+      //   }
+      // </Carousel>
       }
       
     </section>
