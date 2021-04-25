@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom'
 import { steffectContext } from '../../Context'
 import loadingGif from '../../assets/icons/loading-spinner.gif'
 import NotFound from '../404/404'
+import SingleProductCarousel from '../Carousels/SingleProductCarousel'
 
 const SingleProduct = () => {
   const { loading, products, serverEndpoint, addToCart } = useContext(steffectContext)
@@ -20,6 +21,10 @@ const SingleProduct = () => {
   const handleAddToBag = () => {
     addToCart(productLocated)
   }
+
+  useEffect(()=>{
+    console.log(productLocated)
+  },[productLocated])
 
   //if loading completes while page is being viewed, set the product
   useEffect(() => {
@@ -63,7 +68,18 @@ const SingleProduct = () => {
 
           </div>
           <div className="single-product">
-            <img src={serverEndpoint + productLocated.image[0].url} alt="" />
+            {productLocated.image.length > 1 ?
+              <SingleProductCarousel>
+                {productLocated.image.map((image)=>
+                  <div>
+                    <img src={serverEndpoint + image.url} alt='#'/>
+                  </div>
+                )}
+              </SingleProductCarousel>
+              :
+              <img src={serverEndpoint + productLocated.image[0].url} alt="" />
+            }
+            
             <div className="single-product-info">
               <p className="single-product-name">{productLocated.title}</p>
               {productLocated.sale_price ?

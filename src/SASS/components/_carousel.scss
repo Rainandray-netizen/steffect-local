@@ -10,10 +10,19 @@
   }
 }
 
+.slick-slider-wrapper-single{
+  width:40rem;
+  margin-bottom: 3rem;
+  a{
+    text-decoration: none;
+    color:black;
+  }
+}
+
 .carousel-block{
   img{
-    width:500px;
-    height:500px;
+    width:40rem;
+    height:40rem;
   }
   p{
     margin:1rem;

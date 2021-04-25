@@ -21,13 +21,18 @@ import OrderCancelled from '../OrderCancelled/OrderCancelled'
 import SingleProduct from '../SingleProduct/SingleProduct'
 import NotFound from "../404/404";
 import ShippingReturns from '../ShippingReturns/ShippingReturns'
+import Burger from '../HamburgerMenu/HamburgerMenu'
 
 const App = () => {
   return (
     <SteffectProvider>
       <Router>
+        <Burger />
         <Nav />
         <Switch>
+          <Route exact path='/test'>
+            <TestComponent />
+          </Route>
           <Route exact path='/about'>
             <About />
           </Route>
@@ -39,9 +44,6 @@ const App = () => {
           </Route>
           <Route path='/product/:id'>
             <SingleProduct /> 
-          </Route>
-          <Route exact path='/menu'>
-            <p>menu</p>
           </Route>
           <Route exact path='/shopping-bag'>
             <ShoppingBag />

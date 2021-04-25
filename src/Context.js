@@ -12,7 +12,7 @@ export const SteffectProvider = (props) => {
   const [ products, setProducts ] = useState([])
   const [ searchFilter, setSearchFilter ] = useState('')
   const [ cartCount, setCartCount ] = useState(0)
-  console.log({cart})
+  const [ menuOpen, setMenuOpen ] = useState(false)
 
   const countCart = (countableCart) => {
     let totalCount = 0
@@ -143,7 +143,9 @@ export const SteffectProvider = (props) => {
         emptyCart,
         searchFilter,
         setSearchFilter,
-        cartCount
+        cartCount,
+        menuOpen,
+        setMenuOpen,
       }}>
         {props.children}
       </steffectContext.Provider>

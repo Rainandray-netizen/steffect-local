@@ -1,4 +1,5 @@
 import React, { useContext, useState } from 'react'
+import { Link } from 'react-router-dom'
 import { steffectContext } from '../../Context'
 
 const ShoppingBagItem = ( {item, quantity} ) => {
@@ -21,8 +22,10 @@ const ShoppingBagItem = ( {item, quantity} ) => {
     <tr>
         <td>
           <div className="bag-info">
-            <img src={serverEndpoint+image[0].url} alt="" />
-            <p className="grid-product-name">{title}</p>
+            <Link to={`product/${id}`}>
+              <img src={serverEndpoint+image[0].url} alt="" />
+              <p className="grid-product-name">{title}</p>
+            </Link>
             {sale_price ? 
             <div className='prices-wrapper'>
               <p className='sale-price price'>£{sale_price.toFixed(2)}</p> 

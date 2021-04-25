@@ -7,7 +7,7 @@ import CartIcon from './CartIcon'
 
 const Nav = () => {
   const history = useHistory()
-  const { cart, setCart, serverEndpoint, searchFilter, setSearchFilter } = useContext(steffectContext)
+  const { setMenuOpen, serverEndpoint, searchFilter, setSearchFilter } = useContext(steffectContext)
   const [searchActive, setSearchActive] = useState(false)
 
   useEffect(()=>{
@@ -47,9 +47,9 @@ const Nav = () => {
       {/* <!-- Mobile Nav Bar --> */}
       <nav id="nav-mobile">
         <div className="nav-buttons">
-          <Link to="/menu"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+          <svg onClick ={()=>setMenuOpen(true)} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
             <path d="M24 6h-24v-4h24v4zm0 4h-24v4h24v-4zm0 8h-24v4h24v-4z" />
-          </svg></Link>
+          </svg>
           <div className="search-bag">
             {/* <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
               <path
