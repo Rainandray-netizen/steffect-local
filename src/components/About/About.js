@@ -12,8 +12,7 @@ const About = () => {
     <div id="aboutInfo">
       {loading ? <img src={loadingGif} alt='loading...'/> : about && 
       <>
-        <p>{about.aboutText}
-        </p>
+        <p>{about.aboutText}</p>
         <img className="about-img" src={serverEndpoint + about.aboutImage.url} alt="about banner" />
       </>
       }

@@ -2,7 +2,7 @@
 @import url('https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css');
 
 .slick-slider-wrapper{
-  width:500px;
+  width:40rem;
   margin-bottom: 3rem;
   a{
     text-decoration: none;
@@ -20,6 +20,9 @@
 }
 
 .carousel-block{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   img{
     width:40rem;
     height:40rem;

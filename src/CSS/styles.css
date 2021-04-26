@@ -428,7 +428,7 @@ svg {
 }
 
 .slick-slider-wrapper {
-  width: 500px;
+  width: 40rem;
   margin-bottom: 3rem;
 }
 .slick-slider-wrapper a {
@@ -445,6 +445,11 @@ svg {
   color: black;
 }
 
+.carousel-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 .carousel-block img {
   width: 40rem;
   height: 40rem;
@@ -497,7 +502,7 @@ main {
 }
 
 .hamburger-menu {
-  display: flex;
+  display: flex !important;
   flex-direction: column;
   align-items: center;
 }

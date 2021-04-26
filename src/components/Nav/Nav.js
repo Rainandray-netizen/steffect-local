@@ -4,6 +4,7 @@ import { steffectContext } from '../../Context'
 import { Link } from 'react-router-dom'
 import '../../CSS/styles.css'
 import CartIcon from './CartIcon'
+import BackToTop from 'react-back-to-top'
 
 const Nav = () => {
   const history = useHistory()
