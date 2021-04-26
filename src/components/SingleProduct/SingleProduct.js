@@ -22,9 +22,9 @@ const SingleProduct = () => {
     addToCart(productLocated)
   }
 
-  useEffect(()=>{
+  useEffect(() => {
     console.log(productLocated)
-  },[productLocated])
+  }, [productLocated])
 
   //if loading completes while page is being viewed, set the product
   useEffect(() => {
@@ -70,16 +70,16 @@ const SingleProduct = () => {
           <div className="single-product">
             {productLocated.image.length > 1 ?
               <SingleProductCarousel>
-                {productLocated.image.map((image)=>
+                {productLocated.image.map((image) =>
                   <div>
-                    <img src={serverEndpoint + image.url} alt='#'/>
+                    <img src={serverEndpoint + image.url} alt='#' />
                   </div>
                 )}
               </SingleProductCarousel>
               :
               <img src={serverEndpoint + productLocated.image[0].url} alt="" />
             }
-            
+
             <div className="single-product-info">
               <p className="single-product-name">{productLocated.title}</p>
               {productLocated.sale_price ?
