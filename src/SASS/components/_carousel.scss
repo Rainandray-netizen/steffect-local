@@ -1,33 +1,57 @@
 @import url('https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css');
 @import url('https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css');
 
-.slick-slider-wrapper{
-  width:40rem;
-  margin-bottom: 3rem;
-  a{
+.slick-slider-wrapper {
+  width: 30rem;
+  margin-bottom: $main-spacing * 2;
+  text-align: center;
+
+  a {
     text-decoration: none;
     color:black;
   }
 }
 
-.slick-slider-wrapper-single{
-  width:40rem;
-  margin-bottom: 3rem;
-  a{
+.slick-slider-wrapper-single {
+  width: 30rem;
+  margin-bottom: $main-spacing * 2;
+
+  a {
     text-decoration: none;
     color:black;
   }
 }
 
-.carousel-block{
+.carousel-block {
   display: flex;
   flex-direction: column;
   align-items: center;
-  img{
-    width:40rem;
-    height:40rem;
+
+  img {
+    width: 30rem;
+    height: 30rem;
   }
-  p{
-    margin:1rem;
+
+  p {
+    margin: $main-spacing;
+  }
+}
+
+// Desktop View
+
+@media screen and (min-width: 1024px) {
+  .slick-slider-wrapper {
+    width: 40rem;
+  }
+  
+  .slick-slider-wrapper-single {
+    width: 40rem;
+  }
+  
+  .carousel-block {
+    img {
+      width: 40rem;
+      height: 40rem;
+    }
   }
 }
