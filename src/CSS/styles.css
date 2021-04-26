@@ -171,7 +171,7 @@ svg:hover {
 .cart-counter-circle {
   color: white;
   background-color: red;
-  border-radius: 100px;
+  border-radius: 50%;
   position: absolute;
   right: 0px;
   top: 0px;
@@ -423,13 +423,19 @@ svg {
   transition: 0.3s ease;
 }
 
+.disabled {
+  pointer-events: none;
+  background-color: grey;
+}
+
 .add-to-bag:hover {
   background-color: goldenrod;
 }
 
 .slick-slider-wrapper {
-  width: 40rem;
+  width: 30rem;
   margin-bottom: 3rem;
+  text-align: center;
 }
 .slick-slider-wrapper a {
   text-decoration: none;
@@ -437,7 +443,7 @@ svg {
 }
 
 .slick-slider-wrapper-single {
-  width: 40rem;
+  width: 30rem;
   margin-bottom: 3rem;
 }
 .slick-slider-wrapper-single a {
@@ -451,13 +457,27 @@ svg {
   align-items: center;
 }
 .carousel-block img {
-  width: 40rem;
-  height: 40rem;
+  width: 30rem;
+  height: 30rem;
 }
 .carousel-block p {
-  margin: 1rem;
+  margin: 1.5rem;
 }
 
+@media screen and (min-width: 1024px) {
+  .slick-slider-wrapper {
+    width: 40rem;
+  }
+
+  .slick-slider-wrapper-single {
+    width: 40rem;
+  }
+
+  .carousel-block img {
+    width: 40rem;
+    height: 40rem;
+  }
+}
 main {
   min-height: 80vh;
 }
@@ -556,7 +576,7 @@ footer p {
 
 /* Color/shape of burger icon bars */
 .bm-burger-bars {
-  background: #373a47;
+  background: #ffffff;
 }
 
 /* Color/shape of burger icon bars on hover*/
@@ -566,8 +586,8 @@ footer p {
 
 /* Position and sizing of clickable cross button */
 .bm-cross-button {
-  height: 5rem;
-  width: 5rem;
+  height: 2.4rem;
+  width: 2.4rem;
 }
 
 /* Color/shape of close button cross */
@@ -590,6 +610,13 @@ Note: Beware of modifying this element as it can break the animations - you shou
   background: #613B1A;
   padding: 2.5em 1.5em 0;
   font-size: 1.15em;
+}
+
+#svgcross {
+  fill: white;
+  background-color: #613B1A;
+  margin-top: 0.75rem;
+  margin-right: 0.75rem;
 }
 
 /* Morph shape necessary with bubble or elastic */
@@ -731,6 +758,16 @@ Note: Beware of modifying this element as it can break the animations - you shou
   gap: 1.5rem;
 }
 
+.product-tag {
+  background-color: red;
+  color: white;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 1.6rem;
+  padding: 0.75rem;
+  position: absolute;
+}
+
 .grid-product {
   text-align: center;
   display: flex;
@@ -746,6 +783,7 @@ Note: Beware of modifying this element as it can break the animations - you shou
 .grid-product a {
   text-decoration: none;
   color: black;
+  width: 15rem;
 }
 .grid-product p {
   padding: 0.75rem;
@@ -790,12 +828,18 @@ Note: Beware of modifying this element as it can break the animations - you shou
     width: 17rem;
     height: 17rem;
   }
+  .grid-product a {
+    width: 17rem;
+  }
 }
 @media screen and (min-width: 768px) {
   .grid-product img {
     width: 20rem;
     height: 20rem;
     padding-bottom: 0.75rem;
+  }
+  .grid-product a {
+    width: 20rem;
   }
 }
 @media screen and (min-width: 1024px) {
@@ -813,9 +857,8 @@ Note: Beware of modifying this element as it can break the animations - you shou
     height: 20rem;
     padding-bottom: 0.75rem;
   }
-
-  .sale-price {
-    color: red;
+  .grid-product a {
+    width: 20rem;
   }
 
   .old-price {
@@ -841,6 +884,9 @@ Note: Beware of modifying this element as it can break the animations - you shou
     width: 25rem;
     height: 25rem;
     padding-bottom: 0.75rem;
+  }
+  .grid-product a {
+    width: 25rem;
   }
 }
 .single-product-page {
@@ -884,25 +930,22 @@ Note: Beware of modifying this element as it can break the animations - you shou
   align-items: center;
   cursor: default;
 }
-
 .single-product img {
   width: 30rem;
   height: 30rem;
   padding-bottom: 1.5rem;
 }
-
 .single-product p {
   padding: 0.75rem 0;
+}
+.single-product button {
+  width: 30rem;
 }
 
 .single-product-name {
   font-weight: bold;
   text-transform: uppercase;
   cursor: default;
-}
-
-.single-product button {
-  width: 30rem;
 }
 
 .single-product h4 {
