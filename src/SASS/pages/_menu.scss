@@ -60,7 +60,7 @@ footer p {
 
 /* Color/shape of burger icon bars */
 .bm-burger-bars {
-  background: #373a47;
+  background: #ffffff;
 }
 
 /* Color/shape of burger icon bars on hover*/
@@ -70,8 +70,8 @@ footer p {
 
 /* Position and sizing of clickable cross button */
 .bm-cross-button {
-  height: 5rem;
-  width: 5rem;
+  height: 2.4rem;
+  width: 2.4rem;
 }
 
 /* Color/shape of close button cross */
@@ -94,6 +94,13 @@ Note: Beware of modifying this element as it can break the animations - you shou
   background: $main-color;
   padding: 2.5em 1.5em 0;
   font-size: 1.15em;
+}
+
+#svgcross {
+  fill: white;
+  background-color: $main-color;
+  margin-top: $main-spacing / 2;
+  margin-right: $main-spacing / 2;
 }
 
 /* Morph shape necessary with bubble or elastic */
