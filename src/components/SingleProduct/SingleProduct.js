@@ -90,7 +90,7 @@ const SingleProduct = () => {
                 :
                 <p>£{productLocated.price.toFixed(2)}</p>
               }
-              <button className="add-to-bag" onClick={handleAddToBag}>Add to Bag</button>
+              <button className={productLocated.sold_out ? "add-to-bag disabled" : "add-to-bag"} onClick={handleAddToBag}>{productLocated.sold_out? "Sold Out" : "Add to Bag"}</button>
               <h4>Product Description</h4>
               <div>
                 <p>{productLocated.description}</p>

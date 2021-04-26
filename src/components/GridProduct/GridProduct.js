@@ -15,7 +15,7 @@ const GridProduct = ({ product }) => {
   return (
     <div id={id} className="grid-product">
       <Link to={`/product/${id}`}>
-        <div className={sale_price ? "product-tag sale-tag" : null}>Sale</div>
+        {sale_price || sold_out? <div className="product-tag sale-tag">{sold_out? 'Sold Out':'Sale'}</div> : null}
         <img src={serverEndpoint + image[0].url} alt="" />
         <p className="grid-product-name">{title}</p>
         {sale_price ?
@@ -26,7 +26,7 @@ const GridProduct = ({ product }) => {
           :
           <p>£{price.toFixed(2)}</p>}
       </Link>
-      <button onClick={handleAddToBag} className="add-to-bag">Add to Bag</button>
+      <button onClick={handleAddToBag} className={sold_out ? "add-to-bag disabled" : "add-to-bag" }>{sold_out ? "Sold Out" : "Add to Bag"}</button>
     </div>
   )
 }

@@ -38,6 +38,11 @@ svg {
   transition: 0.3s ease;
 }
 
+.disabled {
+  pointer-events: none;
+  background-color: grey;
+}
+
 .add-to-bag:hover {
   background-color: $accent-color;
 }
