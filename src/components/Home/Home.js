@@ -19,7 +19,7 @@ const Home = () => {
       let featured = products.filter(product => product.featured)
       setFeaturedProducts(featured)
     }
-  }, [loading])
+  }, [products])
 
 
   console.log(featuredProducts[0])
