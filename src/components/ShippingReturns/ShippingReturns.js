@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import { steffectContext } from '../../Context'
 import loadingGif from '../../assets/icons/loading-spinner.gif'
+import { Link } from 'react-router-dom'
 
 const ShippingReturns = () => {
   const { pages, loading } = useContext(steffectContext)
@@ -8,6 +9,11 @@ const ShippingReturns = () => {
 
   return(
     <main className="shipping-page">
+      <div className="linktree">
+        <Link to='/'>Home</Link>
+        <p>{'>'}</p>
+        <span>{'Shipping & Returns'}</span>
+      </div>
       <h1>{'Shipping & Returns'}</h1>
 
       {!loading? 

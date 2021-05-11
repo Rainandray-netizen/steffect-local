@@ -36,6 +36,10 @@ const SingleProduct = () => {
     products && locateProduct()
   }, [])
 
+  useEffect(() => {
+    products && locateProduct()
+  }, [products])
+
   //Invalid Id provided => 404
   if (!id) {
     return (

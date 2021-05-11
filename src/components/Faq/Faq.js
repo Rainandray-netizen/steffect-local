@@ -13,7 +13,7 @@ const Faq = () => {
       <div className="linktree">
         <Link to='/'>Home</Link>
         <p>{'>'}</p>
-        <span>Frequently Asked Questions</span>
+        <span>FAQ</span>
       </div>
     <h1>Frequently Asked Questions</h1>
     <div id="faqText">
