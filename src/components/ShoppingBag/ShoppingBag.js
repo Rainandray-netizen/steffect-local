@@ -16,48 +16,48 @@ const ShoppingBag = () => {
 
   useEffect(() => {
     // Check to see if this is a redirect back from Checkout
-    const query = new URLSearchParams(window.location.search);
+    // const query = new URLSearchParams(window.location.search);
 
-    if (query.get("success")) {
-      emptyCart()
-      history.push({
-        pathname: '/order-success'
-      })
-    }
+    // if (query.get("success")) {
+    //   emptyCart()
+    //   history.push({
+    //     pathname: '/order-success'
+    //   })
+    // }
 
-    if (query.get("canceled")) {
-      history.push({
-        pathname: '/order-cancelled'
-      })
-    }
+    // if (query.get("canceled")) {
+    //   history.push({
+    //     pathname: '/order-cancelled'
+    //   })
+    // }
   }, []);
 
   const handleClick = async (event) => {
-    const stripe = await stripePromise;
+    // const stripe = await stripePromise;
 
-    const response = await fetch(`${validationServer}/create-checkout-session`, {
-      method: "POST",
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        cart
-      })
-    });
+    // const response = await fetch(`${validationServer}/create-checkout-session`, {
+    //   method: "POST",
+    //   headers: {
+    //     'Accept': 'application/json',
+    //     'Content-Type': 'application/json'
+    //   },
+    //   body: JSON.stringify({
+    //     cart
+    //   })
+    // });
 
-    const session = await response.json();
+    // const session = await response.json();
 
-    // When the customer clicks on the button, redirect them to Checkout.
-    const result = await stripe.redirectToCheckout({
-      sessionId: session.id,
-    });
+    // // When the customer clicks on the button, redirect them to Checkout.
+    // const result = await stripe.redirectToCheckout({
+    //   sessionId: session.id,
+    // });
 
-    if (result.error) {
-      // If `redirectToCheckout` fails due to a browser or network
-      // error, display the localized error message to your customer
-      // using `result.error.message`.
-    }
+    // if (result.error) {
+    //   // If `redirectToCheckout` fails due to a browser or network
+    //   // error, display the localized error message to your customer
+    //   // using `result.error.message`.
+    // }
   };
 
   //End stripe things

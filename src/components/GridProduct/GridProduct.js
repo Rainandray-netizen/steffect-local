@@ -9,6 +9,7 @@ const GridProduct = ({ product }) => {
     addToCart(product)
   }
 
+
   const { id, image, title, price, sale_price, sold_out } = product
   const serverEndpoint = process.env.REACT_APP_STEFFECT_SERVER_ENDPOINT
 
@@ -16,7 +17,7 @@ const GridProduct = ({ product }) => {
     <div id={id} className="grid-product">
       <Link to={`/product/${id}`}>
         {sale_price || sold_out? <div className="product-tag sale-tag">{sold_out? 'Sold Out':'Sale'}</div> : null}
-        <img src={serverEndpoint + image[0].url} alt="" />
+        <img src={image[0].url.default} alt="" />
         <p className="grid-product-name">{title}</p>
         {sale_price ?
           <div className='prices-wrapper'>

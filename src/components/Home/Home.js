@@ -45,7 +45,7 @@ const Home = () => {
                 featuredProducts.map(product =>
                   <Link to={`/product/${product.id}`}>
                     <div className='carousel-block'>
-                      <img src={serverEndpoint + product.image[0].url} />
+                      <img src={product.image[0].url.default} />
                       <p>{product.title}</p>
                     </div>
                   </Link >

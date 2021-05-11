@@ -1,0 +1,11 @@
+export const candy1 = require('./candy1.jpeg')
+export const candy2 = require('./candy2.jpeg')
+export const skies1 = require('./skies1.jpeg')
+export const skies2 = require('./skies2.jpeg')
+export const melanin1 = require('./melanin1.jpeg')
+export const melanin2 = require('./melanin2.jpeg')
+export const candyfloss1 = require('./candyfloss1.jpeg')
+export const candyfloss2 = require('./candyfloss2.jpeg')
+export const shady1 = require('./shady1.jpeg')
+export const shady2 = require('./shady2.jpeg')
+

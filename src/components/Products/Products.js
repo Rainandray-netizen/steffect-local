@@ -21,6 +21,7 @@ const Products = () => {
     setAllProducts(products)
   },[products])
 
+  
   useEffect(()=>{
     // console.log('filter changed')
     applyFilters(allProducts)
@@ -34,6 +35,10 @@ const Products = () => {
   useEffect(()=>{
     applyFilters(allProducts)
   },[])
+
+  useEffect(()=>{
+    applyFilters(allProducts)
+  },[allProducts])
 
   useEffect(()=>{
     applyFilters(allProducts)

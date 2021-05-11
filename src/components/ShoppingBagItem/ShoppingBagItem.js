@@ -23,7 +23,7 @@ const ShoppingBagItem = ( {item, quantity} ) => {
         <td>
           <div className="bag-info">
             <Link to={`product/${id}`}>
-              <img src={serverEndpoint+image[0].url} alt="" />
+              <img src={image[0].url.default} alt="" />
               <p className="grid-product-name">{title}</p>
             </Link>
             {sale_price ? 

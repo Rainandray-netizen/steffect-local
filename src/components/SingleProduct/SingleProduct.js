@@ -23,7 +23,7 @@ const SingleProduct = () => {
   }
 
   useEffect(() => {
-    console.log(productLocated)
+    console.log({productLocated})
   }, [productLocated])
 
   //if loading completes while page is being viewed, set the product
@@ -76,12 +76,12 @@ const SingleProduct = () => {
               <SingleProductCarousel>
                 {productLocated.image.map((image) =>
                   <div>
-                    <img src={serverEndpoint + image.url} alt='#' />
+                    <img src={image.url.default} alt='#' />
                   </div>
                 )}
               </SingleProductCarousel>
               :
-              <img src={serverEndpoint + productLocated.image[0].url} alt="" />
+              <img src={productLocated.image[0].url.default} alt="" />
             }
 
             <div className="single-product-info">
