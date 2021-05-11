@@ -15,7 +15,6 @@ import Contact from '../Contact/Contact'
 import ShoppingBag from '../ShoppingBag/ShoppingBag'
 import Footer from '../Footer/Footer'
 import Faq from '../Faq/Faq'
-import Checkout from '../Checkout/Checkout'
 import OrderSuccess from '../OrderSuccess/OrderSuccess'
 import OrderCancelled from '../OrderCancelled/OrderCancelled'
 import SingleProduct from '../SingleProduct/SingleProduct'
@@ -50,9 +49,6 @@ const App = () => {
           </Route>
           <Route exact path='/faq'>
             <Faq />
-          </Route>
-          <Route exact path='/checkout'>
-            <Checkout />
           </Route>
           <Route exact path={'/shipping&returns'}>
             <ShippingReturns />

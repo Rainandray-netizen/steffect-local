@@ -3,6 +3,7 @@ import { steffectContext } from '../../Context'
 import loadingGif from '../../assets/icons/loading-spinner.gif'
 import GridProduct from '../GridProduct/GridProduct'
 import { useEffect } from 'react/cjs/react.development'
+import { Link } from 'react-router-dom'
 
 //TODO: explain fork
 
@@ -85,6 +86,11 @@ const Products = () => {
 
   return(
     <main className="products-page">
+      <div className="linktree">
+        <Link to='/'>Home</Link>
+        <p>{'>'}</p>
+        <span>Products</span>
+      </div>
     <h1>Products</h1>
     <div className="all-grid">
       <form className="products-dropdown">

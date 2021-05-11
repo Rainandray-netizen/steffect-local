@@ -1,7 +1,8 @@
 import React, {useState, useEffect } from 'react'
 import getData from './utils/apiFunctions'
-export const steffectContext = React.createContext()
+import localData from './localData'
 
+export const steffectContext = React.createContext()
 const serverEndpoint = process.env.REACT_APP_STEFFECT_SERVER_ENDPOINT 
 
 export const SteffectProvider = (props) => {
@@ -24,11 +25,11 @@ export const SteffectProvider = (props) => {
 
   const getDataWrapper = async () => {
     setLoading(true)
-    const newProducts = await getData('products')
-    const newFaq = await getData('faq-page')
-    const newAbout = await getData('about-page')
-    const newContact = await getData('contact-page')
-    const newShipping = await getData('shipping-and-returns')
+    const newProducts = localData.products
+    const newFaq = localData.faqPage
+    const newAbout = localData.aboutPage
+    const newContact = localData.contactPage
+    const newShipping = localData.shippingAndReturns
     const newPages = {
       faq: newFaq,
       about: newAbout,

@@ -1,6 +1,7 @@
 //TODO:
 //Emailjs contact form
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 
 const Contact = () => {
   const [name, setName] = useState('')
@@ -26,6 +27,11 @@ const Contact = () => {
 
   return (
     <main className="contact-page">
+      <div className="linktree">
+        <Link to='/'>Home</Link>
+        <p>{'>'}</p>
+        <span>Contact</span>
+      </div>
       <h1>Contact Us</h1>
       <div id="contactText">
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore

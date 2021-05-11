@@ -64,6 +64,11 @@ const ShoppingBag = () => {
 
   return(
     <main className="shopping-bag-page">
+      <div className="linktree">
+        <Link to='/'>Home</Link>
+        <p>{'>'}</p>
+        <span>Shopping bag</span>
+      </div>
     <h1>Shopping Bag</h1>
     {cartCount ? 
       <p className="bag-counter">Your bag ({cartCount})</p> 
