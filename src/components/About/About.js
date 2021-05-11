@@ -13,7 +13,7 @@ const About = () => {
     <main className="about-page">
       <div className="linktree">
         <Link to='/'>Home</Link>
-        <p>{'>'}</p>
+        <span>{'>'}</span>
         <span>About</span>
       </div>
     <h1>About</h1>

@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom'
 import '../../CSS/styles.css'
 import CartIcon from './CartIcon'
 import BackToTop from 'react-back-to-top'
+import SteffectLogo from '../../assets/steffect-logo.png'
 
 const Nav = () => {
   const history = useHistory()
@@ -63,7 +64,7 @@ const Nav = () => {
         </div>
         {/* <!-- Logo --> */}
         <div id="logo">
-          <img src={`${serverEndpoint}/uploads/steffect_logo_587f2bd348.png`} alt="logo" />
+          <img src={SteffectLogo} alt="logo" />
         </div>
         <form onSubmit={handleSearchInput} id="form-mobile">
           <svg onClick={handleSearchActive} id="searchicon-mobile" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
@@ -99,7 +100,7 @@ const Nav = () => {
           </div>
           {/* <!-- Logo --> */}
           <div id="logo">
-            <img src={`${serverEndpoint}/uploads/steffect_logo_587f2bd348.png`} alt="logo" />
+            <img src={SteffectLogo} alt="logo" />
           </div>
         </div>
         {/* <!-- Nav Links --> */}

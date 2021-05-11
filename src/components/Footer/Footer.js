@@ -1,12 +1,13 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import SteffectLogo from '../../assets/steffect-logo.png'
 
 const Footer = () => {
   const serverEndpoint = process.env.REACT_APP_STEFFECT_SERVER_ENDPOINT 
 
   return(
     <footer>
-      <img src={`${serverEndpoint}/uploads/steffect_logo_587f2bd348.png`} alt="logo"/>
+      <img src={SteffectLogo} alt="logo"/>
       <div className="contact-icons">
         <a href=""><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
             <path
