@@ -2,6 +2,8 @@ import React,{ useContext } from 'react'
 import {steffectContext} from '../../Context'
 import loadingGif from '../../assets/icons/loading-spinner.gif'
 import { Link } from 'react-router-dom'
+import aboutImage from '../../assets/images/products/1.jpeg'
+
 
 const About = () => {
   const { pages, loading, serverEndpoint } = useContext(steffectContext)
@@ -19,7 +21,7 @@ const About = () => {
       {loading ? <img src={loadingGif} alt='loading...'/> : about && 
       <>
         <p>{about.aboutText}</p>
-        <img className="about-img" src={serverEndpoint + about.aboutImage.url} alt="about banner" />
+        <img className="about-img" src={aboutImage} alt="about banner" />
       </>
       }
     </div>
