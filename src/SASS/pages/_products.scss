@@ -51,7 +51,6 @@
   text-transform: uppercase;
   font-weight: bold;
   font-size: 1.6rem;
-  // width: 5rem;
   padding: $main-spacing / 2;
   position: absolute;
 }
@@ -64,19 +63,19 @@
   align-items: center;
 
   img {
-  width: 15rem;
-  height: 15rem;
-  padding-bottom: $main-spacing / 2;
-}
+    width: 15rem;
+    height: 15rem;
+    padding-bottom: $main-spacing / 2;
+  }
 
   a {
-  text-decoration: none;
-  color: black;
-  width: 15rem;
+    text-decoration: none;
+    color: black;
+    width: 15rem;
   }
 
   p {
-  padding: ($main-spacing / 2);
+    padding: ($main-spacing / 2);
   }
 }
 

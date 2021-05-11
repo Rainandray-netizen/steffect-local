@@ -6,14 +6,14 @@
   align-items: center;
   padding: $main-spacing;
   padding-top: $main-spacing * 2;
-}
 
-.contact-page h1 {
-  padding-bottom: $main-spacing;
-}
+  h1 {
+    padding-bottom: $main-spacing;
+  }
 
-.contact-page p {
-  margin: $main-spacing;
+  p {
+    margin: $main-spacing;
+  }
 }
 
 .contact-form span {

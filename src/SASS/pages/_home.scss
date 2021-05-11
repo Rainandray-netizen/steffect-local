@@ -6,7 +6,7 @@ main {
 
 .hero-image {
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../assets/images/products/6.jpeg");
-  background-position: center;
+  background-position: cover;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
@@ -35,10 +35,10 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-}
 
-.featured-products h1 {
-  font-size: 32px;
-  text-align: center;
-  padding: ($main-spacing * 2) 0;
+  h1 {
+    font-size: 32px;
+    text-align: center;
+    padding: ($main-spacing * 2) 0;
+  }
 }

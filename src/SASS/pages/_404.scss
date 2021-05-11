@@ -7,20 +7,20 @@
   padding: $main-spacing;
   padding-top: $main-spacing * 2;
   text-align: center;
-}
 
-.page-404 h1 {
-  padding-bottom: $main-spacing;
-}
-
-.page-404 p {
-  margin: $main-spacing;
-}
-
-  // Desktop View
-
-  @media screen and (min-width: 1240px) {
-    .page-404 p {
-      width: 75vw;
-    }
+  h1 {
+    padding-bottom: $main-spacing;
   }
+
+  p {
+    margin: $main-spacing;
+  }
+}
+
+// Desktop View
+
+@media screen and (min-width: 1240px) {
+  .page-404 p {
+    width: 75vw;
+  }
+}

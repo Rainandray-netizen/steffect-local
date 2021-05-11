@@ -189,7 +189,37 @@ svg:hover {
   font-weight: bold;
 }
 
-@media screen and (min-width: 600px) {
+.linktree {
+  display: flex;
+  align-items: center;
+  width: 90%;
+  padding: 0 0 3rem 0;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.linktree a {
+  color: black;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+.linktree a:hover {
+  color: goldenrod;
+}
+.linktree span {
+  font-size: 1.2rem;
+  cursor: default;
+}
+.linktree p {
+  margin: 0 1rem !important;
+}
+
+@media screen and (min-width: 500px) {
+  #form-mobile {
+    width: 60%;
+  }
+}
+@media screen and (min-width: 1024px) {
   #nav-desktop {
     display: flex;
     flex-direction: column;
@@ -214,7 +244,6 @@ svg:hover {
   .search-bag {
     z-index: 2;
   }
-
   .search-bag svg {
     padding-left: 1.5rem;
   }
@@ -235,17 +264,14 @@ svg:hover {
     text-align: center;
     padding-top: 1.5rem;
   }
-
   .home-navlinks li {
     padding: 1.5rem;
   }
-
   .home-navlinks a {
     text-decoration: none;
     color: white;
     transition: 0.3s ease;
   }
-
   .home-navlinks a:hover {
     color: goldenrod;
   }
@@ -314,6 +340,10 @@ svg:hover {
   #searchbar {
     width: 25rem;
   }
+
+  .linktree p {
+    width: auto !important;
+  }
 }
 footer {
   background-color: #613B1A;
@@ -322,12 +352,10 @@ footer {
   flex-direction: column;
   align-items: center;
 }
-
 footer img {
   padding: 1.5rem;
   padding-bottom: 3rem;
 }
-
 footer p {
   color: white;
   cursor: default;
@@ -346,17 +374,14 @@ footer p {
   text-align: center;
   padding: 1.5rem;
 }
-
 .footer-links li {
   padding: 1.5rem 0;
 }
-
 .footer-links a {
   text-decoration: none;
   color: white;
   transition: 0.3s ease;
 }
-
 .footer-links a:hover {
   color: goldenrod;
 }
@@ -370,17 +395,14 @@ footer p {
     padding: 1.5rem;
     margin: 1.5rem;
   }
-
   .footer-links li {
     padding: 0 1.5rem;
   }
-
   .footer-links a {
     text-decoration: none;
     color: white;
     transition: 0.3s ease;
   }
-
   .footer-links a:hover {
     color: goldenrod;
   }
@@ -423,13 +445,13 @@ svg {
   transition: 0.3s ease;
 }
 
+.add-to-bag:hover {
+  background-color: goldenrod;
+}
+
 .disabled {
   pointer-events: none;
   background-color: grey;
-}
-
-.add-to-bag:hover {
-  background-color: goldenrod;
 }
 
 .slick-slider-wrapper {
@@ -484,7 +506,7 @@ main {
 
 .hero-image {
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../assets/images/products/6.jpeg");
-  background-position: center;
+  background-position: cover;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
@@ -509,7 +531,6 @@ main {
   flex-direction: column;
   align-items: center;
 }
-
 .featured-products h1 {
   font-size: 32px;
   text-align: center;
@@ -520,24 +541,21 @@ main {
   background-color: #613B1A;
   padding: 1.5rem;
 }
+#hambody a {
+  color: white;
+}
+#hambody a:hover {
+  color: goldenrod;
+}
 
 .hamburger-menu {
   display: flex !important;
   flex-direction: column;
   align-items: center;
 }
-
 .hamburger-menu img {
   padding: 1.5rem;
   padding-bottom: 3rem;
-}
-
-#hambody a {
-  color: white;
-}
-
-#hambody a:hover {
-  color: goldenrod;
 }
 
 footer p {
@@ -550,17 +568,14 @@ footer p {
   text-align: center;
   padding: 1.5rem;
 }
-
 .hamburger-links li {
   padding: 1.5rem 0;
 }
-
 .hamburger-links a {
   text-decoration: none;
   color: white;
   transition: 0.3s ease;
 }
-
 .hamburger-links a:hover {
   color: goldenrod;
 }
@@ -647,19 +662,17 @@ Note: Beware of modifying this element as it can break the animations - you shou
   padding: 1.5rem;
   padding-top: 3rem;
 }
-
 .about-page h1 {
   padding-bottom: 1.5rem;
+}
+.about-page p {
+  margin: 1.5rem;
 }
 
 #aboutInfo {
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-.about-page p {
-  margin: 1.5rem;
 }
 
 .about-img {
@@ -679,11 +692,9 @@ Note: Beware of modifying this element as it can break the animations - you shou
   padding: 1.5rem;
   padding-top: 3rem;
 }
-
 .contact-page h1 {
   padding-bottom: 1.5rem;
 }
-
 .contact-page p {
   margin: 1.5rem;
 }
@@ -897,31 +908,6 @@ Note: Beware of modifying this element as it can break the animations - you shou
   padding-top: 3rem;
 }
 
-.linktree {
-  display: flex;
-  align-items: center;
-  width: 90%;
-  padding: 0 0 3rem 0;
-  font-size: 1.2rem;
-  font-weight: bold;
-  text-transform: uppercase;
-}
-.linktree a {
-  color: black;
-  cursor: pointer;
-  transition: 0.3s ease;
-}
-.linktree a:hover {
-  color: goldenrod;
-}
-.linktree span {
-  font-size: 1.2rem;
-  cursor: default;
-}
-.linktree p {
-  margin: 0 1rem;
-}
-
 .single-product {
   text-align: center;
   display: flex;
@@ -935,6 +921,10 @@ Note: Beware of modifying this element as it can break the animations - you shou
   height: 30rem;
   padding-bottom: 1.5rem;
 }
+.single-product h4 {
+  font-weight: bold;
+  padding: 1.5rem 0;
+}
 .single-product p {
   padding: 0.75rem 0;
 }
@@ -946,11 +936,6 @@ Note: Beware of modifying this element as it can break the animations - you shou
   font-weight: bold;
   text-transform: uppercase;
   cursor: default;
-}
-
-.single-product h4 {
-  font-weight: bold;
-  padding: 1.5rem 0;
 }
 
 .single-product-prices-wrapper {
@@ -977,16 +962,13 @@ Note: Beware of modifying this element as it can break the animations - you shou
     flex-direction: row;
     align-items: flex-start;
   }
-
   .single-product img {
     width: 40rem;
     height: 40rem;
   }
-
   .single-product p {
     width: 30rem;
   }
-
   .single-product button {
     width: 30rem;
     margin-left: 0;
@@ -1014,7 +996,6 @@ Note: Beware of modifying this element as it can break the animations - you shou
   padding: 1.5rem;
   padding-top: 3rem;
 }
-
 .shopping-bag-page h1 {
   padding-bottom: 1.5rem;
 }
@@ -1024,16 +1005,13 @@ Note: Beware of modifying this element as it can break the animations - you shou
   text-align: center;
   margin: 3rem 0;
 }
-
 .bag-contents th {
   font-weight: bold;
   padding: 0.75rem;
 }
-
 .bag-contents td {
   padding: 0.75rem;
 }
-
 .bag-contents input {
   width: 3rem;
   padding: 1.5rem;
@@ -1050,12 +1028,10 @@ Note: Beware of modifying this element as it can break the animations - you shou
   text-decoration: none;
   color: black;
 }
-
 .bag-info img {
   width: 10rem;
   height: 10rem;
 }
-
 .bag-info p {
   padding: 0.75rem 0;
 }
@@ -1078,12 +1054,10 @@ Note: Beware of modifying this element as it can break the animations - you shou
   padding-top: 3rem;
   padding-bottom: 3rem;
 }
-
-.shipping-page h1, h3 {
+.shipping-page h1, .shipping-page h3 {
   text-align: center;
   padding: 1.5rem;
 }
-
 .shipping-page p {
   margin: 1.5rem;
 }
@@ -1106,16 +1080,13 @@ Note: Beware of modifying this element as it can break the animations - you shou
   padding-top: 3rem;
   padding-bottom: 3rem;
 }
-
 .faq-page h1 {
   text-align: center;
   padding: 1.5rem;
 }
-
 .faq-page p {
   margin: 1.5rem;
 }
-
 .faq-page li {
   list-style-type: disc;
 }
@@ -1133,11 +1104,9 @@ Note: Beware of modifying this element as it can break the animations - you shou
   padding-top: 3rem;
   text-align: center;
 }
-
 .page-404 h1 {
   padding-bottom: 1.5rem;
 }
-
 .page-404 p {
   margin: 1.5rem;
 }

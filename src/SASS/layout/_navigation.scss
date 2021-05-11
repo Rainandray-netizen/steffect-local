@@ -65,7 +65,7 @@ svg:hover {
 }
 
 //cart icon styles
-.cart-counter-circle{
+.cart-counter-circle {
   p {
     font-size: 1rem;
     text-align: center;
@@ -76,7 +76,6 @@ svg:hover {
   background-color: red;
   border-radius: 50%;
   position: absolute;
-  // padding: 5px;
   right: 0px;
   top: 0px;
   height: $main-spacing;
@@ -88,9 +87,46 @@ svg:hover {
   margin-top: 0.5rem;
 }
 
+//Linktree
+
+.linktree {
+  display: flex;
+  align-items: center;
+  width: 90%;
+  padding: 0 0 ($main-spacing * 2) 0;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+
+  a {
+    color: black;
+    cursor: pointer;
+    transition: 0.3s ease;
+  }
+
+  a:hover {
+    color: $accent-color;
+  }
+
+  span {
+    font-size: 1.2rem;
+    cursor: default;
+  }
+
+  p {
+    margin: 0 1rem!important;
+  }
+}
+
 // Tablet & Desktop View
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 500px) {
+  #form-mobile {
+    width: 60%;
+  }
+}
+
+@media screen and (min-width: 1024px) {
   #nav-desktop {
     display: flex;
     flex-direction: column;
@@ -114,9 +150,10 @@ svg:hover {
 
   .search-bag {
     z-index: 2;
-  }
-  .search-bag svg {
-    padding-left: $main-spacing;
+
+    svg {
+      padding-left: $main-spacing;
+    }
   }
 
   .nav-buttons {
@@ -134,27 +171,26 @@ svg:hover {
     text-transform: uppercase;
     text-align: center;
     padding-top: $main-spacing;
-  }
-  
-  .home-navlinks li {
-    padding: $main-spacing;
-  }
-  
-  .home-navlinks a {
-    text-decoration: none;
-    color: white;
-    transition: $main-transition;
-  }
-  
-  .home-navlinks a:hover {
-    color: $accent-color;
+
+    li {
+      padding: $main-spacing;
+    }
+
+    a {
+      text-decoration: none;
+      color: white;
+      transition: $main-transition;
+    }
+
+    a:hover {
+      color: $accent-color;
+    }
   }
 
   //Search Bar
 
   .form {
     display: flex;
-    // justify-content: space-between;
     align-items: center;
     padding: 0.8rem;
     background-color: $main-color;
@@ -195,6 +231,7 @@ svg:hover {
     pointer-events: none;
     color: $main-color;
   }
+  
   .searchbar::placeholder{
     color:transparent;
   }
@@ -217,5 +254,9 @@ svg:hover {
 
   #searchbar {
     width: 25rem;
+  }
+
+  .linktree p {
+    width: auto!important;
   }
 }
